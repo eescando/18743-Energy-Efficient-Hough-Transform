@@ -34,7 +34,8 @@ void readFrame( string filename, unsigned char matrix[MAT_LEN][MAT_LEN][NUM_CHAN
 void rgb2gray( unsigned char matrix[MAT_LEN][MAT_LEN][NUM_CHANNELS], fp result[MAT_LEN][MAT_LEN] );
 void conv2D( fp matrix[MAT_LEN][MAT_LEN], fp kernel[FILT_LEN][FILT_LEN], fp result[MAT_LEN][MAT_LEN] );
 void blur( fp matrix[MAT_LEN][MAT_LEN], fp result[MAT_LEN][MAT_LEN] );
-void gradient( fp matrix[MAT_LEN][MAT_LEN], fp grad_x[MAT_LEN][MAT_LEN], fp grad_y[MAT_LEN][MAT_LEN] );
+void gradX( fp matrix[MAT_LEN][MAT_LEN], fp grad_x[MAT_LEN][MAT_LEN] );
+void gradY( fp matrix[MAT_LEN][MAT_LEN], fp grad_y[MAT_LEN][MAT_LEN] );
 void findMag( fp x[MAT_LEN][MAT_LEN], fp y[MAT_LEN][MAT_LEN], fp mag[MAT_LEN][MAT_LEN] );
 void findAngle( fp x[MAT_LEN][MAT_LEN], fp y[MAT_LEN][MAT_LEN], int angle[MAT_LEN][MAT_LEN] );
 void applyThreshold( fp matrix[MAT_LEN][MAT_LEN], fp result[MAT_LEN][MAT_LEN], fp threshold);
@@ -108,7 +109,7 @@ void conv2D( fp matrix[MAT_LEN][MAT_LEN], fp kernel[FILT_LEN][FILT_LEN], fp resu
                     col = j + m - (FILT_LEN/2);
                     if((row>=0) && (row<MAT_LEN) && (col>=0) && (col<MAT_LEN))
                     {
-                        cur_pixel += matrix[i][j] * kernel[m][n];
+                        cur_pixel += matrix[row][col] * kernel[m][n];
                     }
                 }
             }
@@ -130,8 +131,8 @@ void blur( fp matrix[MAT_LEN][MAT_LEN], fp result[MAT_LEN][MAT_LEN] )
     conv2D(matrix, gaussian_kernel, result);
 }
 
-// computes the gradients in the x and y directions
-void gradient( fp matrix[MAT_LEN][MAT_LEN], fp grad_x[MAT_LEN][MAT_LEN], fp grad_y[MAT_LEN][MAT_LEN] )
+// computes the gradient in the x direction
+void gradX( fp matrix[MAT_LEN][MAT_LEN], fp grad_x[MAT_LEN][MAT_LEN] )
 {
     fp sobel_x[FILT_LEN][FILT_LEN] =
     {
@@ -140,6 +141,12 @@ void gradient( fp matrix[MAT_LEN][MAT_LEN], fp grad_x[MAT_LEN][MAT_LEN], fp grad
         {-1, 0, 1}
     };
 
+    conv2D(matrix, sobel_x, grad_x);
+}
+
+// computes the gradient in the y direction
+void gradY( fp matrix[MAT_LEN][MAT_LEN], fp grad_y[MAT_LEN][MAT_LEN] )
+{
     fp sobel_y[FILT_LEN][FILT_LEN] =
     {
         {1,  2,  1},
@@ -147,7 +154,6 @@ void gradient( fp matrix[MAT_LEN][MAT_LEN], fp grad_x[MAT_LEN][MAT_LEN], fp grad
         {-1, -2, -1}
     };
 
-    conv2D(matrix, sobel_x, grad_x);
     conv2D(matrix, sobel_y, grad_y);
 }
 
@@ -172,8 +178,17 @@ void findAngle( fp x[MAT_LEN][MAT_LEN], fp y[MAT_LEN][MAT_LEN], int angle[MAT_LE
     {
         for(j = 0; j < MAT_LEN; j++)
         {
-            fp cur_angle = fp(atan2(((int)y[i][j])<<16, ((int)x[i][j])<<16)) * fp(180 / PI);
-            angle[i][j] = (int)abs(45 * round(double(cur_angle / fp(45))));
+            if(x[i][j] == fp(0))
+            {
+                angle[i][j] = 90;
+            }
+            else
+            {
+                fp cur_angle = fp(atan2(((int)y[i][j])<<16, ((int)x[i][j])<<16)) * fp(180 / PI);
+                int angle_val = (int)(45 * round(double(cur_angle / fp(45))));
+                if(angle_val < 0) angle_val = angle_val + 180;
+                angle[i][j] = angle_val;
+            }
         }
     }
 }
@@ -201,6 +216,7 @@ void nmsGrad( fp mag[MAT_LEN][MAT_LEN], int angle[MAT_LEN][MAT_LEN], fp result[M
     {
         for(j = 0; j < MAT_LEN; j++)
         {
+            result[i][j] = mag[i][j];
             switch(angle[i][j])
             {
                 case 0:
@@ -217,6 +233,7 @@ void nmsGrad( fp mag[MAT_LEN][MAT_LEN], int angle[MAT_LEN][MAT_LEN], fp result[M
                         {
                             result[i][j] = 0;
                         }
+                        break;
                     }
                 case 90:
                     {
@@ -224,6 +241,7 @@ void nmsGrad( fp mag[MAT_LEN][MAT_LEN], int angle[MAT_LEN][MAT_LEN], fp result[M
                         {
                             result[i][j] = 0;
                         }
+                        break;
                     }
                 case 135:
                     {
@@ -231,9 +249,9 @@ void nmsGrad( fp mag[MAT_LEN][MAT_LEN], int angle[MAT_LEN][MAT_LEN], fp result[M
                         {
                             result[i][j] = 0;
                         }
+                        break;
                     }
-                default: result[i][j] = mag[i][j];
-                    break;
+                default: break;
             }
         }
     }
@@ -260,10 +278,6 @@ void houghTransform( fp matrix[MAT_LEN][MAT_LEN], int accum[RHO_LEN][THETA_LEN] 
                     int rho_bin = RHO_RES * abs(int(rho_val/fp(RHO_RES)));
                     int theta_bin = min(THETA_RES * int(theta/THETA_RES), theta_max);
                     accum[rho_bin][theta_bin]++;
-                    if(accum[rho_bin][theta_bin] > MAX_PIXEL_VALUE)
-                    {
-                        accum[rho_bin][theta_bin] = MAX_PIXEL_VALUE;
-                    }
                 }
             }
         }
@@ -325,7 +339,7 @@ int main ( int argc, char *argv[] )
     // Step 1: RGB-to-Gray Conversion
     fp gray[MAT_LEN][MAT_LEN];
     rgb2gray(matrix, gray);
-    /*ofstream grayfile("gray.txt");
+    ofstream grayfile("gray.txt");
     if(grayfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -336,12 +350,12 @@ int main ( int argc, char *argv[] )
             }
         }
         grayfile.close();
-    }*/
+    }
 
     // Step 2: Gaussian Blur
     fp blurred[MAT_LEN][MAT_LEN];
     blur(gray, blurred);
-    /*ofstream blurfile("blurred.txt");
+    ofstream blurfile("blurred.txt");
     if(blurfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -352,13 +366,14 @@ int main ( int argc, char *argv[] )
             }
         }
         blurfile.close();
-    }*/
+    }
 
     // Step 3: Compute the Image Gradient
     fp grad_x[MAT_LEN][MAT_LEN];
     fp grad_y[MAT_LEN][MAT_LEN];
-    gradient(blurred, grad_x, grad_y);
-    /*ofstream gradxfile("grad_x.txt");
+    gradX(blurred, grad_x);
+    gradY(blurred, grad_y);
+    ofstream gradxfile("grad_x.txt");
     if(gradxfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -381,14 +396,14 @@ int main ( int argc, char *argv[] )
             }
         }
         gradyfile.close();
-    }*/
+    }
 
     // Step 4: Find the Magnitude and Angle of the Gradient
     fp mag[MAT_LEN][MAT_LEN];
     int angle[MAT_LEN][MAT_LEN];
     findMag(grad_x, grad_y, mag);
     findAngle(grad_x, grad_y, angle);
-    /*ofstream magfile("mag.txt");
+    ofstream magfile("mag.txt");
     if(magfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -411,29 +426,12 @@ int main ( int argc, char *argv[] )
             }
         }
         anglefile.close();
-    }*/
+    }
 
-    // Step 5: Threshold based on Gradient Magnitude
-    fp threshold = fp(GRAD_THRESH);
-    fp thresholded[MAT_LEN][MAT_LEN];
-    applyThreshold(mag, thresholded, threshold);
-    /*ofstream threshfile("thresh.txt");
-    if(threshfile.is_open())
-    {
-        for(int i = 0; i < MAT_LEN; i++)
-        {
-            for(int j = 0; j < MAT_LEN; j++)
-            {
-                threshfile << double(thresholded[i][j]) << '\n';
-            }
-        }
-        threshfile.close();
-    }*/
-
-    // Step 6: Non-maximal Suppression on Gradient Magnitude
+    // Step 5: Non-maximal Suppression on Gradient Magnitude
     fp grad_suppressed[MAT_LEN][MAT_LEN];
-    nmsGrad(thresholded, angle, grad_suppressed);
-    /*ofstream nmsgradfile("nms_grad.txt");
+    nmsGrad(mag, angle, grad_suppressed);
+    ofstream nmsgradfile("nms_grad.txt");
     if(nmsgradfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -444,12 +442,29 @@ int main ( int argc, char *argv[] )
             }
         }
         nmsgradfile.close();
-    }*/
+    }
+
+    // Step 6: Threshold based on Gradient Magnitude
+    fp threshold = fp(GRAD_THRESH);
+    fp thresholded[MAT_LEN][MAT_LEN];
+    applyThreshold(grad_suppressed, thresholded, threshold);
+    ofstream threshfile("thresh.txt");
+    if(threshfile.is_open())
+    {
+        for(int i = 0; i < MAT_LEN; i++)
+        {
+            for(int j = 0; j < MAT_LEN; j++)
+            {
+                threshfile << double(thresholded[i][j]) << '\n';
+            }
+        }
+        threshfile.close();
+    }
 
     // Step 7: Hough Transform
     int accum[RHO_LEN][THETA_LEN];
-    houghTransform(grad_suppressed, accum);
-    /*ofstream accumfile("accum.txt");
+    houghTransform(thresholded, accum);
+    ofstream accumfile("accum.txt");
     if(accumfile.is_open())
     {
         for(int i = 0; i < RHO_LEN; i++)
@@ -460,12 +475,12 @@ int main ( int argc, char *argv[] )
             }
         }
         accumfile.close();
-    }*/
+    }
 
     // Step 8: Non-maximal Suppression on Accumulator Matrix
     int accum_suppressed[RHO_LEN][THETA_LEN];
     nmsAccum(accum, accum_suppressed);
-    /*ofstream nmsaccumfile("nms_accum.txt");
+    ofstream nmsaccumfile("nms_accum.txt");
     if(nmsaccumfile.is_open())
     {
         for(int i = 0; i < RHO_LEN; i++)
@@ -476,12 +491,12 @@ int main ( int argc, char *argv[] )
             }
         }
         nmsaccumfile.close();
-    }*/
+    }
 
     // Step 9: Hough Lines
     int lines[NUM_LINES][NUM_LINE_DIMS];
     houghLines(accum_suppressed, lines);
-    /*ofstream houghfile("hough_lines.txt");
+    ofstream houghfile("hough_lines.txt");
     if(houghfile.is_open())
     {
         for(int i = 0; i < NUM_LINES; i++)
@@ -492,7 +507,7 @@ int main ( int argc, char *argv[] )
             }
         }
         houghfile.close();
-    }*/
+    }
 
     // Step 10: Draw Lines
 
