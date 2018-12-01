@@ -1,69 +1,16 @@
-#include <algorithm>
-#include <cmath>
-#include <cstring>
-#include <fstream>
-#include <iostream>
-#include <map>
-#include <stdint.h>
-#include <stdio.h>
-#include <string>
-#include "fpmath/include/fpml/fixed_point.h"
-using namespace std;
-using namespace fpml;
+//
+// Created by Josh on 11/25/2018.
+//
 
-#define NUM_CHANNELS 3
-#define MAT_LEN 256
-#define FILT_LEN 3
-#define R_RATIO 0.25
-#define G_RATIO 0.5
-#define B_RATIO 0.25
-#define GRAD_THRESH 0.06
-#define RHO_RES 2
-#define RHO_LEN 181
-#define THETA_RES 2
-#define THETA_LEN 180
-#define NUM_LINES 50
-#define NUM_LINE_DIMS 2
-#define PI 3.14159265
-#define MAX_PIXEL_VALUE 255
-#define FIXED_PT_PRECISION 16
+#include "HoughTransform.h"
 
-typedef fixed_point<int,FIXED_PT_PRECISION> fp;
-
-void readFrame( string filename, unsigned char matrix[MAT_LEN][MAT_LEN][NUM_CHANNELS] );
-void rgb2gray( unsigned char matrix[MAT_LEN][MAT_LEN][NUM_CHANNELS], fp result[MAT_LEN][MAT_LEN] );
-void conv2D( fp matrix[MAT_LEN][MAT_LEN], fp kernel[FILT_LEN][FILT_LEN], fp result[MAT_LEN][MAT_LEN] );
-void blur( fp matrix[MAT_LEN][MAT_LEN], fp result[MAT_LEN][MAT_LEN] );
-void gradX( fp matrix[MAT_LEN][MAT_LEN], fp grad_x[MAT_LEN][MAT_LEN] );
-void gradY( fp matrix[MAT_LEN][MAT_LEN], fp grad_y[MAT_LEN][MAT_LEN] );
-void findMag( fp x[MAT_LEN][MAT_LEN], fp y[MAT_LEN][MAT_LEN], fp mag[MAT_LEN][MAT_LEN] );
-void findAngle( fp x[MAT_LEN][MAT_LEN], fp y[MAT_LEN][MAT_LEN], int angle[MAT_LEN][MAT_LEN] );
-void applyThreshold( fp matrix[MAT_LEN][MAT_LEN], fp result[MAT_LEN][MAT_LEN], fp threshold);
-void nmsGrad( fp mag[MAT_LEN][MAT_LEN], int angle[MAT_LEN][MAT_LEN], fp result[MAT_LEN][MAT_LEN] );
-void houghTransform( fp matrix[MAT_LEN][MAT_LEN], int accum[RHO_LEN][THETA_LEN] );
-void nmsAccum( int accum[RHO_LEN][THETA_LEN], int result[RHO_LEN][THETA_LEN] );
-void houghLines( int accum[RHO_LEN][THETA_LEN], int lines[NUM_LINES][NUM_LINE_DIMS] );
-int main ( int argc, char *argv[] );
-
-
-void readFrame( string filename, unsigned char matrix[MAT_LEN][MAT_LEN][NUM_CHANNELS] )
+void readFrame( string line, unsigned char matrix[MAT_LEN][MAT_LEN][NUM_CHANNELS] )
 {
-    string line;
-    ifstream infile (filename);
-    if(infile.is_open())
-    {
-        while(getline(infile,line))
-        {
-            cout << line.length() << '\n';
-        }
-    }
-    infile.close();
-
     map<unsigned char, unsigned char> asciiToHex = {
-        {'0',0x0}, {'1',0x1}, {'2',0x2}, {'3',0x3},
-        {'4',0x4}, {'5',0x5}, {'6',0x6}, {'7',0x7},
-        {'8',0x8}, {'9',0x9}, {'A',0xa}, {'B',0xb},
-        {'C',0xc}, {'D',0xd}, {'E',0xe}, {'F',0xf}};
+            {'0',0x0}, {'1',0x1}, {'2',0x2}, {'3',0x3},
+            {'4',0x4}, {'5',0x5}, {'6',0x6}, {'7',0x7},
+            {'8',0x8}, {'9',0x9}, {'A',0xa}, {'B',0xb},
+            {'C',0xc}, {'D',0xd}, {'E',0xe}, {'F',0xf}};
 
     int index, row, col, channel;
     unsigned char str, str1, str2;
@@ -86,7 +33,7 @@ void rgb2gray( unsigned char matrix[MAT_LEN][MAT_LEN][NUM_CHANNELS], fp result[M
         for(j = 0; j < MAT_LEN; j++)
         {
             result[i][j] = ( fp(matrix[i][j][0]*R_RATIO) + fp(matrix[i][j][1]*G_RATIO) +
-                           fp(matrix[i][j][2]*B_RATIO) ) / fp(MAX_PIXEL_VALUE);
+                             fp(matrix[i][j][2]*B_RATIO) ) / fp(MAX_PIXEL_VALUE);
         }
     }
 }
@@ -122,11 +69,11 @@ void conv2D( fp matrix[MAT_LEN][MAT_LEN], fp kernel[FILT_LEN][FILT_LEN], fp resu
 void blur( fp matrix[MAT_LEN][MAT_LEN], fp result[MAT_LEN][MAT_LEN] )
 {
     fp gaussian_kernel[FILT_LEN][FILT_LEN] =
-    {
-        {1.0/16.0, 2.0/16.0, 1.0/16.0},
-        {2.0/16.0, 4.0/16.0, 2.0/16.0},
-        {1.0/16.0, 2.0/16.0, 1.0/16.0}
-    };
+            {
+                    {1.0/16.0, 2.0/16.0, 1.0/16.0},
+                    {2.0/16.0, 4.0/16.0, 2.0/16.0},
+                    {1.0/16.0, 2.0/16.0, 1.0/16.0}
+            };
 
     conv2D(matrix, gaussian_kernel, result);
 }
@@ -135,11 +82,11 @@ void blur( fp matrix[MAT_LEN][MAT_LEN], fp result[MAT_LEN][MAT_LEN] )
 void gradX( fp matrix[MAT_LEN][MAT_LEN], fp grad_x[MAT_LEN][MAT_LEN] )
 {
     fp sobel_x[FILT_LEN][FILT_LEN] =
-    {
-        {-1, 0, 1},
-        {-2, 0, 2},
-        {-1, 0, 1}
-    };
+            {
+                    {-1, 0, 1},
+                    {-2, 0, 2},
+                    {-1, 0, 1}
+            };
 
     conv2D(matrix, sobel_x, grad_x);
 }
@@ -148,11 +95,11 @@ void gradX( fp matrix[MAT_LEN][MAT_LEN], fp grad_x[MAT_LEN][MAT_LEN] )
 void gradY( fp matrix[MAT_LEN][MAT_LEN], fp grad_y[MAT_LEN][MAT_LEN] )
 {
     fp sobel_y[FILT_LEN][FILT_LEN] =
-    {
-        {1,  2,  1},
-        {0,  0,  0},
-        {-1, -2, -1}
-    };
+            {
+                    {1,  2,  1},
+                    {0,  0,  0},
+                    {-1, -2, -1}
+            };
 
     conv2D(matrix, sobel_y, grad_y);
 }
@@ -220,37 +167,37 @@ void nmsGrad( fp mag[MAT_LEN][MAT_LEN], int angle[MAT_LEN][MAT_LEN], fp result[M
             switch(angle[i][j])
             {
                 case 0:
+                {
+                    if( (i>0 && mag[i][j]<=mag[i-1][j]) || (i<(MAT_LEN-1) && mag[i][j]<=mag[i+1][j]) )
                     {
-                        if( (i>0 && mag[i][j]<=mag[i-1][j]) || (i<(MAT_LEN-1) && mag[i][j]<=mag[i+1][j]) )
-                        {
-                            result[i][j] = 0;
-                        }
-                        break;
+                        result[i][j] = 0;
                     }
+                    break;
+                }
                 case 45:
+                {
+                    if( (i>0 && j>0 && mag[i][j]<=mag[i-1][j-1]) || (i<(MAT_LEN-1) && j<(MAT_LEN-1) && mag[i][j]<=mag[i+1][j+1]) )
                     {
-                        if( (i>0 && j>0 && mag[i][j]<=mag[i-1][j-1]) || (i<(MAT_LEN-1) && j<(MAT_LEN-1) && mag[i][j]<=mag[i+1][j+1]) )
-                        {
-                            result[i][j] = 0;
-                        }
-                        break;
+                        result[i][j] = 0;
                     }
+                    break;
+                }
                 case 90:
+                {
+                    if( (j>0 && mag[i][j]<=mag[i][j-1]) || (j<(MAT_LEN-1) && mag[i][j]<=mag[i][j+1]) )
                     {
-                        if( (j>0 && mag[i][j]<=mag[i][j-1]) || (j<(MAT_LEN-1) && mag[i][j]<=mag[i][j+1]) )
-                        {
-                            result[i][j] = 0;
-                        }
-                        break;
+                        result[i][j] = 0;
                     }
+                    break;
+                }
                 case 135:
+                {
+                    if( (i>0 && j<(MAT_LEN-1) && mag[i][j]<=mag[i-1][j+1]) || (i<(MAT_LEN-1) && j>0 && mag[i][j]<=mag[i+1][j-1]) )
                     {
-                        if( (i>0 && j<(MAT_LEN-1) && mag[i][j]<=mag[i-1][j+1]) || (i<(MAT_LEN-1) && j>0 && mag[i][j]<=mag[i+1][j-1]) )
-                        {
-                            result[i][j] = 0;
-                        }
-                        break;
+                        result[i][j] = 0;
                     }
+                    break;
+                }
                 default: break;
             }
         }
@@ -311,7 +258,18 @@ void nmsAccum( int accum[RHO_LEN][THETA_LEN], int result[RHO_LEN][THETA_LEN] )
 void houghLines( int accum[RHO_LEN][THETA_LEN], int lines[NUM_LINES][NUM_LINE_DIMS] )
 {
     int vect_size = RHO_LEN * THETA_LEN;
-    int (&accum_vector)[vect_size] = *reinterpret_cast<int(*)[vect_size]>(accum);
+    //int (&accum_vector)[vect_size] = *reinterpret_cast<int(*)[vect_size]>(accum);
+    int accum_vector[vect_size];
+    int count = 0;
+    int r,c;
+    for(r = 0; r < RHO_LEN; r++)
+    {
+        for(c = 0; c < THETA_LEN; c++)
+        {
+            accum_vector[count] = accum[r][c];
+            count++;
+        }
+    }
     int accum_sorted[vect_size];
     memcpy(&accum_sorted, accum_vector, vect_size*sizeof(int));
 
@@ -323,7 +281,7 @@ void houghLines( int accum[RHO_LEN][THETA_LEN], int lines[NUM_LINES][NUM_LINE_DI
         // find the position of the point in the accum_vector
         int index = distance(accum_vector,find(accum_vector,accum_vector+vect_size,accum_sorted[vect_size-i-1]));
         // convert this position to (row,col) format and store in lines matrix
-        int rho = index / RHO_LEN;
+        int rho = index / THETA_LEN;
         int theta = index % THETA_LEN;
         lines[i][0] = rho;
         lines[i][1] = theta;
@@ -334,12 +292,12 @@ int main ( int argc, char *argv[] )
 {
     // initialize matrix to read in frame - assuming just one frame for now
     unsigned char matrix[MAT_LEN][MAT_LEN][NUM_CHANNELS];
-    readFrame(argv[1], matrix);
+    //readFrame(argv[1], matrix);
 
     // Step 1: RGB-to-Gray Conversion
     fp gray[MAT_LEN][MAT_LEN];
     rgb2gray(matrix, gray);
-    ofstream grayfile("gray.txt");
+    /*ofstream grayfile("gray.txt");
     if(grayfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -350,12 +308,12 @@ int main ( int argc, char *argv[] )
             }
         }
         grayfile.close();
-    }
+    }*/
 
     // Step 2: Gaussian Blur
     fp blurred[MAT_LEN][MAT_LEN];
     blur(gray, blurred);
-    ofstream blurfile("blurred.txt");
+    /*ofstream blurfile("blurred.txt");
     if(blurfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -366,14 +324,14 @@ int main ( int argc, char *argv[] )
             }
         }
         blurfile.close();
-    }
+    }*/
 
     // Step 3: Compute the Image Gradient
     fp grad_x[MAT_LEN][MAT_LEN];
     fp grad_y[MAT_LEN][MAT_LEN];
     gradX(blurred, grad_x);
     gradY(blurred, grad_y);
-    ofstream gradxfile("grad_x.txt");
+    /*ofstream gradxfile("grad_x.txt");
     if(gradxfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -396,14 +354,14 @@ int main ( int argc, char *argv[] )
             }
         }
         gradyfile.close();
-    }
+    }*/
 
     // Step 4: Find the Magnitude and Angle of the Gradient
     fp mag[MAT_LEN][MAT_LEN];
     int angle[MAT_LEN][MAT_LEN];
     findMag(grad_x, grad_y, mag);
     findAngle(grad_x, grad_y, angle);
-    ofstream magfile("mag.txt");
+    /*ofstream magfile("mag.txt");
     if(magfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -426,12 +384,12 @@ int main ( int argc, char *argv[] )
             }
         }
         anglefile.close();
-    }
+    }*/
 
     // Step 5: Non-maximal Suppression on Gradient Magnitude
     fp grad_suppressed[MAT_LEN][MAT_LEN];
     nmsGrad(mag, angle, grad_suppressed);
-    ofstream nmsgradfile("nms_grad.txt");
+    /*ofstream nmsgradfile("nms_grad.txt");
     if(nmsgradfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -442,13 +400,13 @@ int main ( int argc, char *argv[] )
             }
         }
         nmsgradfile.close();
-    }
+    }*/
 
     // Step 6: Threshold based on Gradient Magnitude
     fp threshold = fp(GRAD_THRESH);
     fp thresholded[MAT_LEN][MAT_LEN];
     applyThreshold(grad_suppressed, thresholded, threshold);
-    ofstream threshfile("thresh.txt");
+    /*ofstream threshfile("thresh.txt");
     if(threshfile.is_open())
     {
         for(int i = 0; i < MAT_LEN; i++)
@@ -459,12 +417,12 @@ int main ( int argc, char *argv[] )
             }
         }
         threshfile.close();
-    }
+    }*/
 
     // Step 7: Hough Transform
     int accum[RHO_LEN][THETA_LEN];
     houghTransform(thresholded, accum);
-    ofstream accumfile("accum.txt");
+    /*ofstream accumfile("accum.txt");
     if(accumfile.is_open())
     {
         for(int i = 0; i < RHO_LEN; i++)
@@ -475,12 +433,12 @@ int main ( int argc, char *argv[] )
             }
         }
         accumfile.close();
-    }
+    }*/
 
     // Step 8: Non-maximal Suppression on Accumulator Matrix
     int accum_suppressed[RHO_LEN][THETA_LEN];
     nmsAccum(accum, accum_suppressed);
-    ofstream nmsaccumfile("nms_accum.txt");
+    /*ofstream nmsaccumfile("nms_accum.txt");
     if(nmsaccumfile.is_open())
     {
         for(int i = 0; i < RHO_LEN; i++)
@@ -491,12 +449,12 @@ int main ( int argc, char *argv[] )
             }
         }
         nmsaccumfile.close();
-    }
+    }*/
 
     // Step 9: Hough Lines
     int lines[NUM_LINES][NUM_LINE_DIMS];
     houghLines(accum_suppressed, lines);
-    ofstream houghfile("hough_lines.txt");
+    /*ofstream houghfile("hough_lines.txt");
     if(houghfile.is_open())
     {
         for(int i = 0; i < NUM_LINES; i++)
@@ -507,10 +465,10 @@ int main ( int argc, char *argv[] )
             }
         }
         houghfile.close();
-    }
+    }*/
 
     // Step 10: Draw Lines
 
 
-  return 0;
+    return 0;
 }
