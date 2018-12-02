@@ -1,9 +1,11 @@
-video = VideoReader("test.avi");
-fin1 = fopen('chicago_1.hex', 'wt');
-fin2 = fopen('chicago_2.hex', 'wt');
-fin3 = fopen('chicago_3.hex', 'wt');
+num_frames = 200;
+video_name = "test.avi";
+output_name = 'chicago.hex'
 
-for f = [1:1:600]
+video = VideoReader("test.avi");
+fin1 = fopen(output_name, 'wt');
+
+for f = [1:1:200]
     f
     img = readFrame(video);
     img = imresize(img, [256 256]);
@@ -11,14 +13,7 @@ for f = [1:1:600]
     img = dec2hex(img);
     img = permute(img, [2 1]);
     img = convertCharsToStrings(img);
-    if(f <= 200)
-        fprintf(fin1, "%s", img);
-    elseif (f <= 400) 
-        fprintf(fin2, "%s", img);
-    else 
-        fprintf(fin3, "%s", img);
-    end
+    fprintf(fin1, "%s", img);
 end
 fclose(fin1);
-fclose(fin2);
-fclose(fin3); 
+

@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="top">
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|inputRAM:m1|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_b5s1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|mult:t1|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_43r.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
