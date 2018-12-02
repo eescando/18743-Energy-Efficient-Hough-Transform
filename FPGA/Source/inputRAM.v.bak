@@ -43,7 +43,7 @@ module inputRAM (
 	wraddress,
 	wren,
 	q);
-   parameter R = "0";
+
 	input	  clock;
 	input	[31:0]  data;
 	input	[7:0]  rdaddress;
@@ -93,9 +93,9 @@ module inputRAM (
 		altsyncram_component.clock_enable_input_b = "BYPASS",
 		altsyncram_component.clock_enable_output_b = "BYPASS",
 `ifdef NO_PLI
-		altsyncram_component.init_file = {"../../Data/split_single_bar_frame/r",R,".rif"}
+		altsyncram_component.init_file = "../../Data/single_bar_frame.rif"
 `else
-		altsyncram_component.init_file = {"../../Data/split_single_bar_frame/r",R,".hex"}
+		altsyncram_component.init_file = "../../Data/single_bar_frame.hex"
 `endif
 ,
 		altsyncram_component.intended_device_family = "Cyclone IV E",
