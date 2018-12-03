@@ -95,7 +95,7 @@ module inputRAM (
 `ifdef NO_PLI
 		altsyncram_component.init_file = {"../../Data/split_single_bar_frame/r",R,".rif"}
 `else
-		altsyncram_component.init_file = {"../../Data/split_single_bar_frame/r",R,".hex"}
+		altsyncram_component.init_file = {"../../Data/split_single_bar_frame/r",R,".mif"}
 `endif
 ,
 		altsyncram_component.intended_device_family = "Cyclone IV E",

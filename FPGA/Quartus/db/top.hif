@@ -20,48 +20,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-inputRAM
-# storage
-db|top.(2).cnf
-db|top.(2).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-000
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[0].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
-# end
-# entity
 altsyncram
 # storage
 db|top.(3).cnf
@@ -338,9 +296,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[0].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -606,53 +561,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[0].block|altsyncram:altsyncram_component|altsyncram_q9s1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(5).cnf
-db|top.(5).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-001
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[1].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -931,9 +841,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[1].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -1199,54 +1106,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[1].block|altsyncram:altsyncram_component|altsyncram_r9s1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(8).cnf
-db|top.(8).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-002
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[2].block
-input_col:ii|inputRAM:ram[10].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -1525,10 +1386,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[2].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[10].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -1794,55 +1651,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[2].block|altsyncram:altsyncram_component|altsyncram_s9s1:auto_generated
-input_col:ii|inputRAM:ram[10].block|altsyncram:altsyncram_component|altsyncram_s9s1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(11).cnf
-db|top.(11).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-003
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[3].block
-input_col:ii|inputRAM:ram[11].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -2121,10 +1931,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[3].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[11].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -2390,57 +2196,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[3].block|altsyncram:altsyncram_component|altsyncram_t9s1:auto_generated
-input_col:ii|inputRAM:ram[11].block|altsyncram:altsyncram_component|altsyncram_t9s1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(14).cnf
-db|top.(14).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-004
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[4].block
-input_col:ii|inputRAM:ram[12].block
-input_col:ii|inputRAM:ram[20].block
-input_col:ii|inputRAM:ram[100].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -2719,12 +2476,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[4].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[12].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[20].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[100].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -2990,59 +2741,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[4].block|altsyncram:altsyncram_component|altsyncram_u9s1:auto_generated
-input_col:ii|inputRAM:ram[12].block|altsyncram:altsyncram_component|altsyncram_u9s1:auto_generated
-input_col:ii|inputRAM:ram[20].block|altsyncram:altsyncram_component|altsyncram_u9s1:auto_generated
-input_col:ii|inputRAM:ram[100].block|altsyncram:altsyncram_component|altsyncram_u9s1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(17).cnf
-db|top.(17).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-005
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[5].block
-input_col:ii|inputRAM:ram[13].block
-input_col:ii|inputRAM:ram[21].block
-input_col:ii|inputRAM:ram[101].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -3321,12 +3021,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[5].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[13].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[21].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[101].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -3592,61 +3286,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[5].block|altsyncram:altsyncram_component|altsyncram_v9s1:auto_generated
-input_col:ii|inputRAM:ram[13].block|altsyncram:altsyncram_component|altsyncram_v9s1:auto_generated
-input_col:ii|inputRAM:ram[21].block|altsyncram:altsyncram_component|altsyncram_v9s1:auto_generated
-input_col:ii|inputRAM:ram[101].block|altsyncram:altsyncram_component|altsyncram_v9s1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(20).cnf
-db|top.(20).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-006
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[6].block
-input_col:ii|inputRAM:ram[14].block
-input_col:ii|inputRAM:ram[22].block
-input_col:ii|inputRAM:ram[30].block
-input_col:ii|inputRAM:ram[102].block
-input_col:ii|inputRAM:ram[110].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -3925,14 +3566,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[6].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[14].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[22].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[30].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[102].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[110].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -4198,63 +3831,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[6].block|altsyncram:altsyncram_component|altsyncram_0as1:auto_generated
-input_col:ii|inputRAM:ram[14].block|altsyncram:altsyncram_component|altsyncram_0as1:auto_generated
-input_col:ii|inputRAM:ram[22].block|altsyncram:altsyncram_component|altsyncram_0as1:auto_generated
-input_col:ii|inputRAM:ram[30].block|altsyncram:altsyncram_component|altsyncram_0as1:auto_generated
-input_col:ii|inputRAM:ram[102].block|altsyncram:altsyncram_component|altsyncram_0as1:auto_generated
-input_col:ii|inputRAM:ram[110].block|altsyncram:altsyncram_component|altsyncram_0as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(23).cnf
-db|top.(23).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-007
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[7].block
-input_col:ii|inputRAM:ram[15].block
-input_col:ii|inputRAM:ram[23].block
-input_col:ii|inputRAM:ram[31].block
-input_col:ii|inputRAM:ram[103].block
-input_col:ii|inputRAM:ram[111].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -4533,14 +4111,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[7].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[15].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[23].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[31].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[103].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[111].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -4806,66 +4376,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[7].block|altsyncram:altsyncram_component|altsyncram_1as1:auto_generated
-input_col:ii|inputRAM:ram[15].block|altsyncram:altsyncram_component|altsyncram_1as1:auto_generated
-input_col:ii|inputRAM:ram[23].block|altsyncram:altsyncram_component|altsyncram_1as1:auto_generated
-input_col:ii|inputRAM:ram[31].block|altsyncram:altsyncram_component|altsyncram_1as1:auto_generated
-input_col:ii|inputRAM:ram[103].block|altsyncram:altsyncram_component|altsyncram_1as1:auto_generated
-input_col:ii|inputRAM:ram[111].block|altsyncram:altsyncram_component|altsyncram_1as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(26).cnf
-db|top.(26).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-008
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[8].block
-input_col:ii|inputRAM:ram[16].block
-input_col:ii|inputRAM:ram[24].block
-input_col:ii|inputRAM:ram[32].block
-input_col:ii|inputRAM:ram[40].block
-input_col:ii|inputRAM:ram[104].block
-input_col:ii|inputRAM:ram[112].block
-input_col:ii|inputRAM:ram[120].block
-input_col:ii|inputRAM:ram[200].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -5144,17 +4656,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[8].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[16].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[24].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[32].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[40].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[104].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[112].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[120].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[200].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -5420,69 +4921,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[8].block|altsyncram:altsyncram_component|altsyncram_2as1:auto_generated
-input_col:ii|inputRAM:ram[16].block|altsyncram:altsyncram_component|altsyncram_2as1:auto_generated
-input_col:ii|inputRAM:ram[24].block|altsyncram:altsyncram_component|altsyncram_2as1:auto_generated
-input_col:ii|inputRAM:ram[32].block|altsyncram:altsyncram_component|altsyncram_2as1:auto_generated
-input_col:ii|inputRAM:ram[40].block|altsyncram:altsyncram_component|altsyncram_2as1:auto_generated
-input_col:ii|inputRAM:ram[104].block|altsyncram:altsyncram_component|altsyncram_2as1:auto_generated
-input_col:ii|inputRAM:ram[112].block|altsyncram:altsyncram_component|altsyncram_2as1:auto_generated
-input_col:ii|inputRAM:ram[120].block|altsyncram:altsyncram_component|altsyncram_2as1:auto_generated
-input_col:ii|inputRAM:ram[200].block|altsyncram:altsyncram_component|altsyncram_2as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(29).cnf
-db|top.(29).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-009
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[9].block
-input_col:ii|inputRAM:ram[17].block
-input_col:ii|inputRAM:ram[25].block
-input_col:ii|inputRAM:ram[33].block
-input_col:ii|inputRAM:ram[41].block
-input_col:ii|inputRAM:ram[105].block
-input_col:ii|inputRAM:ram[113].block
-input_col:ii|inputRAM:ram[121].block
-input_col:ii|inputRAM:ram[201].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -5761,17 +5201,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[9].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[17].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[25].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[33].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[41].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[105].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[113].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[121].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[201].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -6037,71 +5466,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[9].block|altsyncram:altsyncram_component|altsyncram_3as1:auto_generated
-input_col:ii|inputRAM:ram[17].block|altsyncram:altsyncram_component|altsyncram_3as1:auto_generated
-input_col:ii|inputRAM:ram[25].block|altsyncram:altsyncram_component|altsyncram_3as1:auto_generated
-input_col:ii|inputRAM:ram[33].block|altsyncram:altsyncram_component|altsyncram_3as1:auto_generated
-input_col:ii|inputRAM:ram[41].block|altsyncram:altsyncram_component|altsyncram_3as1:auto_generated
-input_col:ii|inputRAM:ram[105].block|altsyncram:altsyncram_component|altsyncram_3as1:auto_generated
-input_col:ii|inputRAM:ram[113].block|altsyncram:altsyncram_component|altsyncram_3as1:auto_generated
-input_col:ii|inputRAM:ram[121].block|altsyncram:altsyncram_component|altsyncram_3as1:auto_generated
-input_col:ii|inputRAM:ram[201].block|altsyncram:altsyncram_component|altsyncram_3as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(32).cnf
-db|top.(32).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00:
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[18].block
-input_col:ii|inputRAM:ram[26].block
-input_col:ii|inputRAM:ram[34].block
-input_col:ii|inputRAM:ram[42].block
-input_col:ii|inputRAM:ram[50].block
-input_col:ii|inputRAM:ram[106].block
-input_col:ii|inputRAM:ram[114].block
-input_col:ii|inputRAM:ram[122].block
-input_col:ii|inputRAM:ram[130].block
-input_col:ii|inputRAM:ram[202].block
-input_col:ii|inputRAM:ram[210].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -6380,19 +5746,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[18].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[26].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[34].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[42].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[50].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[106].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[114].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[122].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[130].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[202].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[210].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -6658,73 +6011,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[18].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[26].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[34].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[42].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[50].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[106].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[114].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[122].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[130].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[202].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-input_col:ii|inputRAM:ram[210].block|altsyncram:altsyncram_component|altsyncram_4as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(35).cnf
-db|top.(35).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00;
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[19].block
-input_col:ii|inputRAM:ram[27].block
-input_col:ii|inputRAM:ram[35].block
-input_col:ii|inputRAM:ram[43].block
-input_col:ii|inputRAM:ram[51].block
-input_col:ii|inputRAM:ram[107].block
-input_col:ii|inputRAM:ram[115].block
-input_col:ii|inputRAM:ram[123].block
-input_col:ii|inputRAM:ram[131].block
-input_col:ii|inputRAM:ram[203].block
-input_col:ii|inputRAM:ram[211].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -7003,19 +6291,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[19].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[27].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[35].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[43].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[51].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[107].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[115].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[123].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[131].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[203].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[211].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -7281,75 +6556,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[19].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[27].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[35].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[43].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[51].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[107].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[115].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[123].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[131].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[203].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-input_col:ii|inputRAM:ram[211].block|altsyncram:altsyncram_component|altsyncram_5as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(38).cnf
-db|top.(38).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00<
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[28].block
-input_col:ii|inputRAM:ram[36].block
-input_col:ii|inputRAM:ram[44].block
-input_col:ii|inputRAM:ram[52].block
-input_col:ii|inputRAM:ram[60].block
-input_col:ii|inputRAM:ram[108].block
-input_col:ii|inputRAM:ram[116].block
-input_col:ii|inputRAM:ram[124].block
-input_col:ii|inputRAM:ram[132].block
-input_col:ii|inputRAM:ram[140].block
-input_col:ii|inputRAM:ram[204].block
-input_col:ii|inputRAM:ram[212].block
-input_col:ii|inputRAM:ram[220].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -7628,21 +6836,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[28].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[36].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[44].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[52].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[60].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[108].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[116].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[124].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[132].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[140].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[204].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[212].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[220].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -7908,77 +7101,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[28].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[36].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[44].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[52].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[60].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[108].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[116].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[124].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[132].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[140].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[204].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[212].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-input_col:ii|inputRAM:ram[220].block|altsyncram:altsyncram_component|altsyncram_6as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(41).cnf
-db|top.(41).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00=
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[29].block
-input_col:ii|inputRAM:ram[37].block
-input_col:ii|inputRAM:ram[45].block
-input_col:ii|inputRAM:ram[53].block
-input_col:ii|inputRAM:ram[61].block
-input_col:ii|inputRAM:ram[109].block
-input_col:ii|inputRAM:ram[117].block
-input_col:ii|inputRAM:ram[125].block
-input_col:ii|inputRAM:ram[133].block
-input_col:ii|inputRAM:ram[141].block
-input_col:ii|inputRAM:ram[205].block
-input_col:ii|inputRAM:ram[213].block
-input_col:ii|inputRAM:ram[221].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -8257,21 +7381,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[29].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[37].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[45].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[53].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[61].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[109].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[117].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[125].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[133].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[141].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[205].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[213].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[221].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -8537,78 +7646,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[29].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[37].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[45].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[53].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[61].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[109].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[117].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[125].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[133].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[141].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[205].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[213].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-input_col:ii|inputRAM:ram[221].block|altsyncram:altsyncram_component|altsyncram_7as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(44).cnf
-db|top.(44).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00>
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[38].block
-input_col:ii|inputRAM:ram[46].block
-input_col:ii|inputRAM:ram[54].block
-input_col:ii|inputRAM:ram[62].block
-input_col:ii|inputRAM:ram[70].block
-input_col:ii|inputRAM:ram[118].block
-input_col:ii|inputRAM:ram[126].block
-input_col:ii|inputRAM:ram[134].block
-input_col:ii|inputRAM:ram[142].block
-input_col:ii|inputRAM:ram[150].block
-input_col:ii|inputRAM:ram[206].block
-input_col:ii|inputRAM:ram[214].block
-input_col:ii|inputRAM:ram[222].block
-input_col:ii|inputRAM:ram[230].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -8887,22 +7926,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[38].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[46].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[54].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[62].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[70].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[118].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[126].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[134].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[142].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[150].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[206].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[214].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[222].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[230].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -9168,79 +8191,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[38].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[46].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[54].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[62].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[70].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[118].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[126].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[134].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[142].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[150].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[206].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[214].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[222].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-input_col:ii|inputRAM:ram[230].block|altsyncram:altsyncram_component|altsyncram_8as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(47).cnf
-db|top.(47).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00?
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[39].block
-input_col:ii|inputRAM:ram[47].block
-input_col:ii|inputRAM:ram[55].block
-input_col:ii|inputRAM:ram[63].block
-input_col:ii|inputRAM:ram[71].block
-input_col:ii|inputRAM:ram[119].block
-input_col:ii|inputRAM:ram[127].block
-input_col:ii|inputRAM:ram[135].block
-input_col:ii|inputRAM:ram[143].block
-input_col:ii|inputRAM:ram[151].block
-input_col:ii|inputRAM:ram[207].block
-input_col:ii|inputRAM:ram[215].block
-input_col:ii|inputRAM:ram[223].block
-input_col:ii|inputRAM:ram[231].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -9519,22 +8471,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[39].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[47].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[55].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[63].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[71].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[119].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[127].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[135].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[143].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[151].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[207].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[215].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[223].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[231].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -9800,80 +8736,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[39].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[47].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[55].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[63].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[71].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[119].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[127].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[135].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[143].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[151].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[207].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[215].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[223].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-input_col:ii|inputRAM:ram[231].block|altsyncram:altsyncram_component|altsyncram_9as1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(50).cnf
-db|top.(50).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00@
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[48].block
-input_col:ii|inputRAM:ram[56].block
-input_col:ii|inputRAM:ram[64].block
-input_col:ii|inputRAM:ram[72].block
-input_col:ii|inputRAM:ram[80].block
-input_col:ii|inputRAM:ram[128].block
-input_col:ii|inputRAM:ram[136].block
-input_col:ii|inputRAM:ram[144].block
-input_col:ii|inputRAM:ram[152].block
-input_col:ii|inputRAM:ram[160].block
-input_col:ii|inputRAM:ram[208].block
-input_col:ii|inputRAM:ram[216].block
-input_col:ii|inputRAM:ram[224].block
-input_col:ii|inputRAM:ram[232].block
-input_col:ii|inputRAM:ram[240].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -10152,23 +9016,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[48].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[56].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[64].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[72].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[80].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[128].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[136].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[144].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[152].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[160].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[208].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[216].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[224].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[232].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[240].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -10434,81 +9281,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[48].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[56].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[64].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[72].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[80].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[128].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[136].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[144].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[152].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[160].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[208].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[216].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[224].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[232].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-input_col:ii|inputRAM:ram[240].block|altsyncram:altsyncram_component|altsyncram_aas1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(53).cnf
-db|top.(53).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00A
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[49].block
-input_col:ii|inputRAM:ram[57].block
-input_col:ii|inputRAM:ram[65].block
-input_col:ii|inputRAM:ram[73].block
-input_col:ii|inputRAM:ram[81].block
-input_col:ii|inputRAM:ram[129].block
-input_col:ii|inputRAM:ram[137].block
-input_col:ii|inputRAM:ram[145].block
-input_col:ii|inputRAM:ram[153].block
-input_col:ii|inputRAM:ram[161].block
-input_col:ii|inputRAM:ram[209].block
-input_col:ii|inputRAM:ram[217].block
-input_col:ii|inputRAM:ram[225].block
-input_col:ii|inputRAM:ram[233].block
-input_col:ii|inputRAM:ram[241].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -10787,23 +9561,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[49].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[57].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[65].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[73].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[81].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[129].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[137].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[145].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[153].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[161].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[209].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[217].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[225].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[233].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[241].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -11069,81 +9826,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[49].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[57].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[65].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[73].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[81].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[129].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[137].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[145].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[153].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[161].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[209].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[217].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[225].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[233].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-input_col:ii|inputRAM:ram[241].block|altsyncram:altsyncram_component|altsyncram_bbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(56).cnf
-db|top.(56).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00B
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[58].block
-input_col:ii|inputRAM:ram[66].block
-input_col:ii|inputRAM:ram[74].block
-input_col:ii|inputRAM:ram[82].block
-input_col:ii|inputRAM:ram[90].block
-input_col:ii|inputRAM:ram[138].block
-input_col:ii|inputRAM:ram[146].block
-input_col:ii|inputRAM:ram[154].block
-input_col:ii|inputRAM:ram[162].block
-input_col:ii|inputRAM:ram[170].block
-input_col:ii|inputRAM:ram[218].block
-input_col:ii|inputRAM:ram[226].block
-input_col:ii|inputRAM:ram[234].block
-input_col:ii|inputRAM:ram[242].block
-input_col:ii|inputRAM:ram[250].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -11422,23 +10106,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[58].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[66].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[74].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[82].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[90].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[138].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[146].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[154].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[162].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[170].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[218].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[226].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[234].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[242].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[250].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -11704,81 +10371,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[58].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[66].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[74].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[82].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[90].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[138].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[146].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[154].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[162].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[170].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[218].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[226].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[234].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[242].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-input_col:ii|inputRAM:ram[250].block|altsyncram:altsyncram_component|altsyncram_cbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(59).cnf
-db|top.(59).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00C
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[59].block
-input_col:ii|inputRAM:ram[67].block
-input_col:ii|inputRAM:ram[75].block
-input_col:ii|inputRAM:ram[83].block
-input_col:ii|inputRAM:ram[91].block
-input_col:ii|inputRAM:ram[139].block
-input_col:ii|inputRAM:ram[147].block
-input_col:ii|inputRAM:ram[155].block
-input_col:ii|inputRAM:ram[163].block
-input_col:ii|inputRAM:ram[171].block
-input_col:ii|inputRAM:ram[219].block
-input_col:ii|inputRAM:ram[227].block
-input_col:ii|inputRAM:ram[235].block
-input_col:ii|inputRAM:ram[243].block
-input_col:ii|inputRAM:ram[251].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -12057,23 +10651,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[59].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[67].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[75].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[83].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[91].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[139].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[147].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[155].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[163].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[171].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[219].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[227].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[235].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[243].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[251].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -12339,79 +10916,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[59].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[67].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[75].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[83].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[91].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[139].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[147].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[155].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[163].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[171].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[219].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[227].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[235].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[243].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-input_col:ii|inputRAM:ram[251].block|altsyncram:altsyncram_component|altsyncram_dbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(62).cnf
-db|top.(62).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00D
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[68].block
-input_col:ii|inputRAM:ram[76].block
-input_col:ii|inputRAM:ram[84].block
-input_col:ii|inputRAM:ram[92].block
-input_col:ii|inputRAM:ram[148].block
-input_col:ii|inputRAM:ram[156].block
-input_col:ii|inputRAM:ram[164].block
-input_col:ii|inputRAM:ram[172].block
-input_col:ii|inputRAM:ram[180].block
-input_col:ii|inputRAM:ram[228].block
-input_col:ii|inputRAM:ram[236].block
-input_col:ii|inputRAM:ram[244].block
-input_col:ii|inputRAM:ram[252].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -12690,21 +11196,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[68].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[76].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[84].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[92].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[148].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[156].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[164].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[172].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[180].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[228].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[236].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[244].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[252].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -12970,77 +11461,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[68].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[76].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[84].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[92].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[148].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[156].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[164].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[172].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[180].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[228].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[236].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[244].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-input_col:ii|inputRAM:ram[252].block|altsyncram:altsyncram_component|altsyncram_ebs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(65).cnf
-db|top.(65).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00E
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[69].block
-input_col:ii|inputRAM:ram[77].block
-input_col:ii|inputRAM:ram[85].block
-input_col:ii|inputRAM:ram[93].block
-input_col:ii|inputRAM:ram[149].block
-input_col:ii|inputRAM:ram[157].block
-input_col:ii|inputRAM:ram[165].block
-input_col:ii|inputRAM:ram[173].block
-input_col:ii|inputRAM:ram[181].block
-input_col:ii|inputRAM:ram[229].block
-input_col:ii|inputRAM:ram[237].block
-input_col:ii|inputRAM:ram[245].block
-input_col:ii|inputRAM:ram[253].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -13319,21 +11741,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[69].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[77].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[85].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[93].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[149].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[157].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[165].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[173].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[181].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[229].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[237].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[245].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[253].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -13599,75 +12006,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[69].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[77].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[85].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[93].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[149].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[157].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[165].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[173].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[181].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[229].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[237].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[245].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-input_col:ii|inputRAM:ram[253].block|altsyncram:altsyncram_component|altsyncram_fbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(68).cnf
-db|top.(68).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00F
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[78].block
-input_col:ii|inputRAM:ram[86].block
-input_col:ii|inputRAM:ram[94].block
-input_col:ii|inputRAM:ram[158].block
-input_col:ii|inputRAM:ram[166].block
-input_col:ii|inputRAM:ram[174].block
-input_col:ii|inputRAM:ram[182].block
-input_col:ii|inputRAM:ram[190].block
-input_col:ii|inputRAM:ram[238].block
-input_col:ii|inputRAM:ram[246].block
-input_col:ii|inputRAM:ram[254].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -13946,19 +12286,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[78].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[86].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[94].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[158].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[166].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[174].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[182].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[190].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[238].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[246].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[254].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -14224,73 +12551,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[78].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[86].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[94].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[158].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[166].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[174].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[182].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[190].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[238].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[246].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-input_col:ii|inputRAM:ram[254].block|altsyncram:altsyncram_component|altsyncram_gbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(71).cnf
-db|top.(71).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00G
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[79].block
-input_col:ii|inputRAM:ram[87].block
-input_col:ii|inputRAM:ram[95].block
-input_col:ii|inputRAM:ram[159].block
-input_col:ii|inputRAM:ram[167].block
-input_col:ii|inputRAM:ram[175].block
-input_col:ii|inputRAM:ram[183].block
-input_col:ii|inputRAM:ram[191].block
-input_col:ii|inputRAM:ram[239].block
-input_col:ii|inputRAM:ram[247].block
-input_col:ii|inputRAM:ram[255].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -14569,19 +12831,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[79].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[87].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[95].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[159].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[167].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[175].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[183].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[191].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[239].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[247].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[255].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -14847,69 +13096,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[79].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[87].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[95].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[159].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[167].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[175].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[183].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[191].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[239].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[247].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-input_col:ii|inputRAM:ram[255].block|altsyncram:altsyncram_component|altsyncram_hbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(74).cnf
-db|top.(74).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00H
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[88].block
-input_col:ii|inputRAM:ram[96].block
-input_col:ii|inputRAM:ram[168].block
-input_col:ii|inputRAM:ram[176].block
-input_col:ii|inputRAM:ram[184].block
-input_col:ii|inputRAM:ram[192].block
-input_col:ii|inputRAM:ram[248].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -15188,15 +13376,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[88].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[96].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[168].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[176].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[184].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[192].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[248].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -15462,65 +13641,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[88].block|altsyncram:altsyncram_component|altsyncram_ibs1:auto_generated
-input_col:ii|inputRAM:ram[96].block|altsyncram:altsyncram_component|altsyncram_ibs1:auto_generated
-input_col:ii|inputRAM:ram[168].block|altsyncram:altsyncram_component|altsyncram_ibs1:auto_generated
-input_col:ii|inputRAM:ram[176].block|altsyncram:altsyncram_component|altsyncram_ibs1:auto_generated
-input_col:ii|inputRAM:ram[184].block|altsyncram:altsyncram_component|altsyncram_ibs1:auto_generated
-input_col:ii|inputRAM:ram[192].block|altsyncram:altsyncram_component|altsyncram_ibs1:auto_generated
-input_col:ii|inputRAM:ram[248].block|altsyncram:altsyncram_component|altsyncram_ibs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(77).cnf
-db|top.(77).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00I
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[89].block
-input_col:ii|inputRAM:ram[97].block
-input_col:ii|inputRAM:ram[169].block
-input_col:ii|inputRAM:ram[177].block
-input_col:ii|inputRAM:ram[185].block
-input_col:ii|inputRAM:ram[193].block
-input_col:ii|inputRAM:ram[249].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -15799,15 +13921,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[89].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[97].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[169].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[177].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[185].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[193].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[249].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -16073,62 +14186,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[89].block|altsyncram:altsyncram_component|altsyncram_jbs1:auto_generated
-input_col:ii|inputRAM:ram[97].block|altsyncram:altsyncram_component|altsyncram_jbs1:auto_generated
-input_col:ii|inputRAM:ram[169].block|altsyncram:altsyncram_component|altsyncram_jbs1:auto_generated
-input_col:ii|inputRAM:ram[177].block|altsyncram:altsyncram_component|altsyncram_jbs1:auto_generated
-input_col:ii|inputRAM:ram[185].block|altsyncram:altsyncram_component|altsyncram_jbs1:auto_generated
-input_col:ii|inputRAM:ram[193].block|altsyncram:altsyncram_component|altsyncram_jbs1:auto_generated
-input_col:ii|inputRAM:ram[249].block|altsyncram:altsyncram_component|altsyncram_jbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(80).cnf
-db|top.(80).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00J
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[98].block
-input_col:ii|inputRAM:ram[178].block
-input_col:ii|inputRAM:ram[186].block
-input_col:ii|inputRAM:ram[194].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -16407,12 +14466,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[98].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[178].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[186].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[194].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -16678,59 +14731,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[98].block|altsyncram:altsyncram_component|altsyncram_kbs1:auto_generated
-input_col:ii|inputRAM:ram[178].block|altsyncram:altsyncram_component|altsyncram_kbs1:auto_generated
-input_col:ii|inputRAM:ram[186].block|altsyncram:altsyncram_component|altsyncram_kbs1:auto_generated
-input_col:ii|inputRAM:ram[194].block|altsyncram:altsyncram_component|altsyncram_kbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(83).cnf
-db|top.(83).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00K
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[99].block
-input_col:ii|inputRAM:ram[179].block
-input_col:ii|inputRAM:ram[187].block
-input_col:ii|inputRAM:ram[195].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -17009,12 +15011,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[99].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[179].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[187].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[195].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -17280,57 +15276,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[99].block|altsyncram:altsyncram_component|altsyncram_lbs1:auto_generated
-input_col:ii|inputRAM:ram[179].block|altsyncram:altsyncram_component|altsyncram_lbs1:auto_generated
-input_col:ii|inputRAM:ram[187].block|altsyncram:altsyncram_component|altsyncram_lbs1:auto_generated
-input_col:ii|inputRAM:ram[195].block|altsyncram:altsyncram_component|altsyncram_lbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(86).cnf
-db|top.(86).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00L
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[188].block
-input_col:ii|inputRAM:ram[196].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -17609,10 +15556,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[188].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[196].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -17878,55 +15821,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[188].block|altsyncram:altsyncram_component|altsyncram_mbs1:auto_generated
-input_col:ii|inputRAM:ram[196].block|altsyncram:altsyncram_component|altsyncram_mbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(89).cnf
-db|top.(89).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00M
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[189].block
-input_col:ii|inputRAM:ram[197].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -18205,10 +16101,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[189].block|altsyncram:altsyncram_component
-input_col:ii|inputRAM:ram[197].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -18474,54 +16366,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[189].block|altsyncram:altsyncram_component|altsyncram_nbs1:auto_generated
-input_col:ii|inputRAM:ram[197].block|altsyncram:altsyncram_component|altsyncram_nbs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(92).cnf
-db|top.(92).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00N
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[198].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -18800,9 +16646,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[198].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -19068,53 +16911,8 @@ address_a0
 
 0
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[198].block|altsyncram:altsyncram_component|altsyncram_obs1:auto_generated
-}
 # macro_sequence
 
-# end
-# entity
-inputRAM
-# storage
-db|top.(95).cnf
-db|top.(95).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-R
-00O
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-input_col:ii|inputRAM:ram[199].block
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -19393,9 +17191,6 @@ byteena_a
 -1
 2
 }
-# hierarchies {
-input_col:ii|inputRAM:ram[199].block|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -19661,8 +17456,288 @@ address_a0
 
 0
 }
+# macro_sequence
+
+# end
+# entity
+altsyncram
+# storage
+db|top.(5).cnf
+db|top.(5).cnf
+# case_insensitive
+# source_file
+|altera|10.0|quartus|libraries|megafunctions|altsyncram.tdf
+483dcb92a62dbd397235eab9767ff7b
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+DUAL_PORT
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+32
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_A
+8
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_A
+256
+PARAMETER_SIGNED_DEC
+USR
+OUTDATA_REG_A
+UNREGISTERED
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+32
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_B
+8
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_B
+256
+PARAMETER_SIGNED_DEC
+USR
+INDATA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_WRADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+OUTDATA_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_SIGNED_DEC
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+DEF
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+DONT_CARE
+PARAMETER_UNKNOWN
+USR
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+../../Data/split_single_bar_frame/r000.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_INPUT_B
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_B
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone IV E
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_h9s1
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+wren_a
+-1
+3
+q_b
+-1
+3
+data_a
+-1
+3
+clock0
+-1
+3
+address_b
+-1
+3
+address_a
+-1
+3
+wren_b
+-1
+1
+addressstall_b
+-1
+1
+addressstall_a
+-1
+1
+aclr1
+-1
+1
+aclr0
+-1
+1
+rden_b
+-1
+2
+rden_a
+-1
+2
+data_b
+-1
+2
+clocken3
+-1
+2
+clocken2
+-1
+2
+clocken1
+-1
+2
+clocken0
+-1
+2
+clock1
+-1
+2
+byteena_b
+-1
+2
+byteena_a
+-1
+2
+}
 # hierarchies {
-input_col:ii|inputRAM:ram[199].block|altsyncram:altsyncram_component|altsyncram_pbs1:auto_generated
+input_col:ii|inputRAM:ram[0].block|altsyncram:altsyncram_component
 }
 # macro_sequence
 
@@ -19679,7 +17754,7 @@ ON
 # case_sensitive
 # source_file
 |users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|top.sv
-24db9398b97cf27c2c377306fe0c1c0
+c435688c7a96af9b8cf6af6a113a89
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -19705,7 +17780,7 @@ DEF
 }
 # include_file {
 |users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
+9fccdd866823610dbea1bbeeca4af54
 }
 # hierarchies {
 |
@@ -19725,7 +17800,7 @@ ON
 # case_sensitive
 # source_file
 |users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|top.sv
-24db9398b97cf27c2c377306fe0c1c0
+c435688c7a96af9b8cf6af6a113a89
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -19755,7 +17830,7 @@ USR
 }
 # include_file {
 |users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
+9fccdd866823610dbea1bbeeca4af54
 }
 # hierarchies {
 input_col:ii
@@ -19764,19 +17839,19 @@ input_col:ii
 ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
-grey_pipe
+inputRAM
 # storage
-db|top.(98).cnf
-db|top.(98).cnf
+db|top.(2).cnf
+db|top.(2).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_sensitive
 # source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|top.sv
-24db9398b97cf27c2c377306fe0c1c0
-9
+|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
+9fccdd866823610dbea1bbeeca4af54
+8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
 OFF
@@ -19794,35 +17869,299 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # user_parameter {
-p
-1
-PARAMETER_SIGNED_DEC
+R
+000
+PARAMETER_STRING
 USR
 }
-# include_file {
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
+# hierarchies {
+input_col:ii|inputRAM:ram[0].block
+}
+# macro_sequence
+ALTERA_RESERVED_QISALTERA_RESERVED_QIS
+# end
+# entity
+altsyncram_h9s1
+# storage
+db|top.(8).cnf
+db|top.(8).cnf
+# case_insensitive
+# source_file
+db|altsyncram_h9s1.tdf
+c2c41edc9b8b58294c2325428195e52b
+7
+# used_port {
+wren_a
+-1
+3
+q_b9
+-1
+3
+q_b8
+-1
+3
+q_b7
+-1
+3
+q_b6
+-1
+3
+q_b5
+-1
+3
+q_b4
+-1
+3
+q_b31
+-1
+3
+q_b30
+-1
+3
+q_b3
+-1
+3
+q_b29
+-1
+3
+q_b28
+-1
+3
+q_b27
+-1
+3
+q_b26
+-1
+3
+q_b25
+-1
+3
+q_b24
+-1
+3
+q_b23
+-1
+3
+q_b22
+-1
+3
+q_b21
+-1
+3
+q_b20
+-1
+3
+q_b2
+-1
+3
+q_b19
+-1
+3
+q_b18
+-1
+3
+q_b17
+-1
+3
+q_b16
+-1
+3
+q_b15
+-1
+3
+q_b14
+-1
+3
+q_b13
+-1
+3
+q_b12
+-1
+3
+q_b11
+-1
+3
+q_b10
+-1
+3
+q_b1
+-1
+3
+q_b0
+-1
+3
+data_a9
+-1
+3
+data_a8
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a31
+-1
+3
+data_a30
+-1
+3
+data_a3
+-1
+3
+data_a29
+-1
+3
+data_a28
+-1
+3
+data_a27
+-1
+3
+data_a26
+-1
+3
+data_a25
+-1
+3
+data_a24
+-1
+3
+data_a23
+-1
+3
+data_a22
+-1
+3
+data_a21
+-1
+3
+data_a20
+-1
+3
+data_a2
+-1
+3
+data_a19
+-1
+3
+data_a18
+-1
+3
+data_a17
+-1
+3
+data_a16
+-1
+3
+data_a15
+-1
+3
+data_a14
+-1
+3
+data_a13
+-1
+3
+data_a12
+-1
+3
+data_a11
+-1
+3
+data_a10
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock0
+-1
+3
+address_b7
+-1
+3
+address_b6
+-1
+3
+address_b5
+-1
+3
+address_b4
+-1
+3
+address_b3
+-1
+3
+address_b2
+-1
+3
+address_b1
+-1
+3
+address_b0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+|users|ejesc|code|18743-energy-efficient-hough-transform|data|split_single_bar_frame|r000.mif
+285c4829b5def235e1a1816747afdbf
 }
 # hierarchies {
-grey_pipe:gp
+input_col:ii|inputRAM:ram[0].block|altsyncram:altsyncram_component|altsyncram_h9s1:auto_generated
 }
 # macro_sequence
 
 # end
 # entity
-grey
+inputRAM
 # storage
-db|top.(99).cnf
-db|top.(99).cnf
+db|top.(11).cnf
+db|top.(11).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_sensitive
 # source_file
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|top.sv
-24db9398b97cf27c2c377306fe0c1c0
-9
+|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
+9fccdd866823610dbea1bbeeca4af54
+8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
 OFF
@@ -19839,267 +18178,297 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# include_file {
-|users|ejesc|code|18743-energy-efficient-hough-transform|fpga|source|inputram.v
-79c46127c61d133394d2ecff931575f
+# user_parameter {
+R
+001
+PARAMETER_STRING
+USR
 }
 # hierarchies {
-grey_pipe:gp|grey:alu[0].conv
-grey_pipe:gp|grey:alu[1].conv
-grey_pipe:gp|grey:alu[2].conv
-grey_pipe:gp|grey:alu[3].conv
-grey_pipe:gp|grey:alu[4].conv
-grey_pipe:gp|grey:alu[5].conv
-grey_pipe:gp|grey:alu[6].conv
-grey_pipe:gp|grey:alu[7].conv
-grey_pipe:gp|grey:alu[8].conv
-grey_pipe:gp|grey:alu[9].conv
-grey_pipe:gp|grey:alu[10].conv
-grey_pipe:gp|grey:alu[11].conv
-grey_pipe:gp|grey:alu[12].conv
-grey_pipe:gp|grey:alu[13].conv
-grey_pipe:gp|grey:alu[14].conv
-grey_pipe:gp|grey:alu[15].conv
-grey_pipe:gp|grey:alu[16].conv
-grey_pipe:gp|grey:alu[17].conv
-grey_pipe:gp|grey:alu[18].conv
-grey_pipe:gp|grey:alu[19].conv
-grey_pipe:gp|grey:alu[20].conv
-grey_pipe:gp|grey:alu[21].conv
-grey_pipe:gp|grey:alu[22].conv
-grey_pipe:gp|grey:alu[23].conv
-grey_pipe:gp|grey:alu[24].conv
-grey_pipe:gp|grey:alu[25].conv
-grey_pipe:gp|grey:alu[26].conv
-grey_pipe:gp|grey:alu[27].conv
-grey_pipe:gp|grey:alu[28].conv
-grey_pipe:gp|grey:alu[29].conv
-grey_pipe:gp|grey:alu[30].conv
-grey_pipe:gp|grey:alu[31].conv
-grey_pipe:gp|grey:alu[32].conv
-grey_pipe:gp|grey:alu[33].conv
-grey_pipe:gp|grey:alu[34].conv
-grey_pipe:gp|grey:alu[35].conv
-grey_pipe:gp|grey:alu[36].conv
-grey_pipe:gp|grey:alu[37].conv
-grey_pipe:gp|grey:alu[38].conv
-grey_pipe:gp|grey:alu[39].conv
-grey_pipe:gp|grey:alu[40].conv
-grey_pipe:gp|grey:alu[41].conv
-grey_pipe:gp|grey:alu[42].conv
-grey_pipe:gp|grey:alu[43].conv
-grey_pipe:gp|grey:alu[44].conv
-grey_pipe:gp|grey:alu[45].conv
-grey_pipe:gp|grey:alu[46].conv
-grey_pipe:gp|grey:alu[47].conv
-grey_pipe:gp|grey:alu[48].conv
-grey_pipe:gp|grey:alu[49].conv
-grey_pipe:gp|grey:alu[50].conv
-grey_pipe:gp|grey:alu[51].conv
-grey_pipe:gp|grey:alu[52].conv
-grey_pipe:gp|grey:alu[53].conv
-grey_pipe:gp|grey:alu[54].conv
-grey_pipe:gp|grey:alu[55].conv
-grey_pipe:gp|grey:alu[56].conv
-grey_pipe:gp|grey:alu[57].conv
-grey_pipe:gp|grey:alu[58].conv
-grey_pipe:gp|grey:alu[59].conv
-grey_pipe:gp|grey:alu[60].conv
-grey_pipe:gp|grey:alu[61].conv
-grey_pipe:gp|grey:alu[62].conv
-grey_pipe:gp|grey:alu[63].conv
-grey_pipe:gp|grey:alu[64].conv
-grey_pipe:gp|grey:alu[65].conv
-grey_pipe:gp|grey:alu[66].conv
-grey_pipe:gp|grey:alu[67].conv
-grey_pipe:gp|grey:alu[68].conv
-grey_pipe:gp|grey:alu[69].conv
-grey_pipe:gp|grey:alu[70].conv
-grey_pipe:gp|grey:alu[71].conv
-grey_pipe:gp|grey:alu[72].conv
-grey_pipe:gp|grey:alu[73].conv
-grey_pipe:gp|grey:alu[74].conv
-grey_pipe:gp|grey:alu[75].conv
-grey_pipe:gp|grey:alu[76].conv
-grey_pipe:gp|grey:alu[77].conv
-grey_pipe:gp|grey:alu[78].conv
-grey_pipe:gp|grey:alu[79].conv
-grey_pipe:gp|grey:alu[80].conv
-grey_pipe:gp|grey:alu[81].conv
-grey_pipe:gp|grey:alu[82].conv
-grey_pipe:gp|grey:alu[83].conv
-grey_pipe:gp|grey:alu[84].conv
-grey_pipe:gp|grey:alu[85].conv
-grey_pipe:gp|grey:alu[86].conv
-grey_pipe:gp|grey:alu[87].conv
-grey_pipe:gp|grey:alu[88].conv
-grey_pipe:gp|grey:alu[89].conv
-grey_pipe:gp|grey:alu[90].conv
-grey_pipe:gp|grey:alu[91].conv
-grey_pipe:gp|grey:alu[92].conv
-grey_pipe:gp|grey:alu[93].conv
-grey_pipe:gp|grey:alu[94].conv
-grey_pipe:gp|grey:alu[95].conv
-grey_pipe:gp|grey:alu[96].conv
-grey_pipe:gp|grey:alu[97].conv
-grey_pipe:gp|grey:alu[98].conv
-grey_pipe:gp|grey:alu[99].conv
-grey_pipe:gp|grey:alu[100].conv
-grey_pipe:gp|grey:alu[101].conv
-grey_pipe:gp|grey:alu[102].conv
-grey_pipe:gp|grey:alu[103].conv
-grey_pipe:gp|grey:alu[104].conv
-grey_pipe:gp|grey:alu[105].conv
-grey_pipe:gp|grey:alu[106].conv
-grey_pipe:gp|grey:alu[107].conv
-grey_pipe:gp|grey:alu[108].conv
-grey_pipe:gp|grey:alu[109].conv
-grey_pipe:gp|grey:alu[110].conv
-grey_pipe:gp|grey:alu[111].conv
-grey_pipe:gp|grey:alu[112].conv
-grey_pipe:gp|grey:alu[113].conv
-grey_pipe:gp|grey:alu[114].conv
-grey_pipe:gp|grey:alu[115].conv
-grey_pipe:gp|grey:alu[116].conv
-grey_pipe:gp|grey:alu[117].conv
-grey_pipe:gp|grey:alu[118].conv
-grey_pipe:gp|grey:alu[119].conv
-grey_pipe:gp|grey:alu[120].conv
-grey_pipe:gp|grey:alu[121].conv
-grey_pipe:gp|grey:alu[122].conv
-grey_pipe:gp|grey:alu[123].conv
-grey_pipe:gp|grey:alu[124].conv
-grey_pipe:gp|grey:alu[125].conv
-grey_pipe:gp|grey:alu[126].conv
-grey_pipe:gp|grey:alu[127].conv
-grey_pipe:gp|grey:alu[128].conv
-grey_pipe:gp|grey:alu[129].conv
-grey_pipe:gp|grey:alu[130].conv
-grey_pipe:gp|grey:alu[131].conv
-grey_pipe:gp|grey:alu[132].conv
-grey_pipe:gp|grey:alu[133].conv
-grey_pipe:gp|grey:alu[134].conv
-grey_pipe:gp|grey:alu[135].conv
-grey_pipe:gp|grey:alu[136].conv
-grey_pipe:gp|grey:alu[137].conv
-grey_pipe:gp|grey:alu[138].conv
-grey_pipe:gp|grey:alu[139].conv
-grey_pipe:gp|grey:alu[140].conv
-grey_pipe:gp|grey:alu[141].conv
-grey_pipe:gp|grey:alu[142].conv
-grey_pipe:gp|grey:alu[143].conv
-grey_pipe:gp|grey:alu[144].conv
-grey_pipe:gp|grey:alu[145].conv
-grey_pipe:gp|grey:alu[146].conv
-grey_pipe:gp|grey:alu[147].conv
-grey_pipe:gp|grey:alu[148].conv
-grey_pipe:gp|grey:alu[149].conv
-grey_pipe:gp|grey:alu[150].conv
-grey_pipe:gp|grey:alu[151].conv
-grey_pipe:gp|grey:alu[152].conv
-grey_pipe:gp|grey:alu[153].conv
-grey_pipe:gp|grey:alu[154].conv
-grey_pipe:gp|grey:alu[155].conv
-grey_pipe:gp|grey:alu[156].conv
-grey_pipe:gp|grey:alu[157].conv
-grey_pipe:gp|grey:alu[158].conv
-grey_pipe:gp|grey:alu[159].conv
-grey_pipe:gp|grey:alu[160].conv
-grey_pipe:gp|grey:alu[161].conv
-grey_pipe:gp|grey:alu[162].conv
-grey_pipe:gp|grey:alu[163].conv
-grey_pipe:gp|grey:alu[164].conv
-grey_pipe:gp|grey:alu[165].conv
-grey_pipe:gp|grey:alu[166].conv
-grey_pipe:gp|grey:alu[167].conv
-grey_pipe:gp|grey:alu[168].conv
-grey_pipe:gp|grey:alu[169].conv
-grey_pipe:gp|grey:alu[170].conv
-grey_pipe:gp|grey:alu[171].conv
-grey_pipe:gp|grey:alu[172].conv
-grey_pipe:gp|grey:alu[173].conv
-grey_pipe:gp|grey:alu[174].conv
-grey_pipe:gp|grey:alu[175].conv
-grey_pipe:gp|grey:alu[176].conv
-grey_pipe:gp|grey:alu[177].conv
-grey_pipe:gp|grey:alu[178].conv
-grey_pipe:gp|grey:alu[179].conv
-grey_pipe:gp|grey:alu[180].conv
-grey_pipe:gp|grey:alu[181].conv
-grey_pipe:gp|grey:alu[182].conv
-grey_pipe:gp|grey:alu[183].conv
-grey_pipe:gp|grey:alu[184].conv
-grey_pipe:gp|grey:alu[185].conv
-grey_pipe:gp|grey:alu[186].conv
-grey_pipe:gp|grey:alu[187].conv
-grey_pipe:gp|grey:alu[188].conv
-grey_pipe:gp|grey:alu[189].conv
-grey_pipe:gp|grey:alu[190].conv
-grey_pipe:gp|grey:alu[191].conv
-grey_pipe:gp|grey:alu[192].conv
-grey_pipe:gp|grey:alu[193].conv
-grey_pipe:gp|grey:alu[194].conv
-grey_pipe:gp|grey:alu[195].conv
-grey_pipe:gp|grey:alu[196].conv
-grey_pipe:gp|grey:alu[197].conv
-grey_pipe:gp|grey:alu[198].conv
-grey_pipe:gp|grey:alu[199].conv
-grey_pipe:gp|grey:alu[200].conv
-grey_pipe:gp|grey:alu[201].conv
-grey_pipe:gp|grey:alu[202].conv
-grey_pipe:gp|grey:alu[203].conv
-grey_pipe:gp|grey:alu[204].conv
-grey_pipe:gp|grey:alu[205].conv
-grey_pipe:gp|grey:alu[206].conv
-grey_pipe:gp|grey:alu[207].conv
-grey_pipe:gp|grey:alu[208].conv
-grey_pipe:gp|grey:alu[209].conv
-grey_pipe:gp|grey:alu[210].conv
-grey_pipe:gp|grey:alu[211].conv
-grey_pipe:gp|grey:alu[212].conv
-grey_pipe:gp|grey:alu[213].conv
-grey_pipe:gp|grey:alu[214].conv
-grey_pipe:gp|grey:alu[215].conv
-grey_pipe:gp|grey:alu[216].conv
-grey_pipe:gp|grey:alu[217].conv
-grey_pipe:gp|grey:alu[218].conv
-grey_pipe:gp|grey:alu[219].conv
-grey_pipe:gp|grey:alu[220].conv
-grey_pipe:gp|grey:alu[221].conv
-grey_pipe:gp|grey:alu[222].conv
-grey_pipe:gp|grey:alu[223].conv
-grey_pipe:gp|grey:alu[224].conv
-grey_pipe:gp|grey:alu[225].conv
-grey_pipe:gp|grey:alu[226].conv
-grey_pipe:gp|grey:alu[227].conv
-grey_pipe:gp|grey:alu[228].conv
-grey_pipe:gp|grey:alu[229].conv
-grey_pipe:gp|grey:alu[230].conv
-grey_pipe:gp|grey:alu[231].conv
-grey_pipe:gp|grey:alu[232].conv
-grey_pipe:gp|grey:alu[233].conv
-grey_pipe:gp|grey:alu[234].conv
-grey_pipe:gp|grey:alu[235].conv
-grey_pipe:gp|grey:alu[236].conv
-grey_pipe:gp|grey:alu[237].conv
-grey_pipe:gp|grey:alu[238].conv
-grey_pipe:gp|grey:alu[239].conv
-grey_pipe:gp|grey:alu[240].conv
-grey_pipe:gp|grey:alu[241].conv
-grey_pipe:gp|grey:alu[242].conv
-grey_pipe:gp|grey:alu[243].conv
-grey_pipe:gp|grey:alu[244].conv
-grey_pipe:gp|grey:alu[245].conv
-grey_pipe:gp|grey:alu[246].conv
-grey_pipe:gp|grey:alu[247].conv
-grey_pipe:gp|grey:alu[248].conv
-grey_pipe:gp|grey:alu[249].conv
-grey_pipe:gp|grey:alu[250].conv
-grey_pipe:gp|grey:alu[251].conv
-grey_pipe:gp|grey:alu[252].conv
-grey_pipe:gp|grey:alu[253].conv
-grey_pipe:gp|grey:alu[254].conv
-grey_pipe:gp|grey:alu[255].conv
+input_col:ii|inputRAM:ram[1].block
+}
+# macro_sequence
+ALTERA_RESERVED_QISALTERA_RESERVED_QIS
+# end
+# entity
+altsyncram
+# storage
+db|top.(14).cnf
+db|top.(14).cnf
+# case_insensitive
+# source_file
+|altera|10.0|quartus|libraries|megafunctions|altsyncram.tdf
+483dcb92a62dbd397235eab9767ff7b
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+DUAL_PORT
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+32
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_A
+8
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_A
+256
+PARAMETER_SIGNED_DEC
+USR
+OUTDATA_REG_A
+UNREGISTERED
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+32
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_B
+8
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_B
+256
+PARAMETER_SIGNED_DEC
+USR
+INDATA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_WRADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+OUTDATA_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_SIGNED_DEC
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+DEF
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+DONT_CARE
+PARAMETER_UNKNOWN
+USR
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+../../Data/split_single_bar_frame/r001.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_INPUT_B
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_B
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone IV E
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_i9s1
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+wren_a
+-1
+3
+q_b
+-1
+3
+data_a
+-1
+3
+clock0
+-1
+3
+address_b
+-1
+3
+address_a
+-1
+3
+wren_b
+-1
+1
+addressstall_b
+-1
+1
+addressstall_a
+-1
+1
+aclr1
+-1
+1
+aclr0
+-1
+1
+rden_b
+-1
+2
+rden_a
+-1
+2
+data_b
+-1
+2
+clocken3
+-1
+2
+clocken2
+-1
+2
+clocken1
+-1
+2
+clocken0
+-1
+2
+clock1
+-1
+2
+byteena_b
+-1
+2
+byteena_a
+-1
+2
+}
+# hierarchies {
+input_col:ii|inputRAM:ram[1].block|altsyncram:altsyncram_component
 }
 # macro_sequence
 
