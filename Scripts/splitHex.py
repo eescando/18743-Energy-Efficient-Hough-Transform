@@ -8,7 +8,8 @@ if not os.path.exists(output_path):
 
 with open(image_path) as f:
   for i in range (0, 256):
-    o = open(output_path + "/r" + str(i) + ".hex", "w");
+    ss = "00000" + str(i)
+    o = open(output_path + ss[-3:] + ".hex", "w");
     for j in range (0,256):
       s = f.read(2*3) + "00";
       o.write(s);

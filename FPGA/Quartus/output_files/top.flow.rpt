@@ -1,6 +1,6 @@
 Flow report for top
-Sat Dec  1 15:46:25 2018
-Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
+Sun Dec 02 21:13:36 2018
+Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
 
 
 ---------------------
@@ -19,7 +19,7 @@ Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2010 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -35,26 +35,27 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------+
-; Flow Summary                                                                   ;
-+------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Sat Dec  1 15:46:25 2018     ;
-; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
-; Revision Name                      ; top                                       ;
-; Top-level Entity Name              ; top                                       ;
-; Family                             ; Cyclone IV E                              ;
-; Device                             ; EP4CE115F29C7                             ;
-; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 1 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 1 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                       ;
-; Total registers                    ; 0                                         ;
-; Total pins                         ; 10 / 529 ( 2 % )                          ;
-; Total virtual pins                 ; 0                                         ;
-; Total memory bits                  ; 64 / 3,981,312 ( < 1 % )                  ;
-; Embedded Multiplier 9-bit elements ; 2 / 532 ( < 1 % )                         ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                             ;
-+------------------------------------+-------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++------------------------------------+------------------------------------------+
+; Flow Status                        ; Successful - Sun Dec 02 21:13:36 2018    ;
+; Quartus II Version                 ; 10.0 Build 218 06/27/2010 SJ Web Edition ;
+; Revision Name                      ; top                                      ;
+; Top-level Entity Name              ; top                                      ;
+; Family                             ; Cyclone IV E                             ;
+; Device                             ; EP4CE115F29C7                            ;
+; Timing Models                      ; Final                                    ;
+; Met timing requirements            ; N/A                                      ;
+; Total logic elements               ; 1,696 / 114,480 ( 1 % )                  ;
+;     Total combinational functions  ; 736 / 114,480 ( < 1 % )                  ;
+;     Dedicated logic registers      ; 1,498 / 114,480 ( 1 % )                  ;
+; Total registers                    ; 1498                                     ;
+; Total pins                         ; 41 / 529 ( 8 % )                         ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 155,648 / 3,981,312 ( 4 % )              ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                          ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                            ;
++------------------------------------+------------------------------------------+
 
 
 +-----------------------------------------+
@@ -62,33 +63,33 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/01/2018 15:45:49 ;
+; Start date & time ; 12/02/2018 21:09:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top                 ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                             ;
-+-------------------------------------+-------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                   ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+-------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.154369714914492       ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                    ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)  ; <None>        ; --          ; --             ;
-; IP_TOOL_NAME                        ; LPM_MULT                ; --            ; --          ; --             ;
-; IP_TOOL_NAME                        ; RAM: 2-PORT             ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                     ; 12.1                    ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                     ; 12.1                    ; --            ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                      ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                       ; --            ; --          ; --             ;
-; MISC_FILE                           ; ../Source/inputRAM_bb.v ; --            ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                    ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING   ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                  ; --            ; --          ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files            ; --            ; --          ; --             ;
-+-------------------------------------+-------------------------+---------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                     ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 110299156051993.154380298603592 ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_MULT                        ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; RAM: 2-PORT                     ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                            ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                            ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --             ;
+; MISC_FILE                           ; ../Source/inputRAM_bb.v         ; --            ; --          ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                            ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --             ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -96,26 +97,26 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 669 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:15     ; 3.5                     ; 1340 MB             ; 00:00:23                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 626 MB              ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 744 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 772 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:28     ; --                      ; --                  ; 00:00:35                           ;
+; Analysis & Synthesis      ; 00:02:03     ; 1.0                     ; 429 MB              ; 00:02:07                           ;
+; Fitter                    ; 00:00:58     ; 1.0                     ; 504 MB              ; 00:00:59                           ;
+; Assembler                 ; 00:00:14     ; 1.0                     ; 496 MB              ; 00:00:14                           ;
+; TimeQuest Timing Analyzer ; 00:00:15     ; 1.0                     ; 355 MB              ; 00:00:13                           ;
+; EDA Netlist Writer        ; 00:00:09     ; 1.0                     ; 261 MB              ; 00:00:08                           ;
+; Total                     ; 00:03:39     ; --                      ; --                  ; 00:03:41                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                              ;
-+---------------------------+--------------------------+---------+------------+----------------+
-; Module Name               ; Machine Hostname         ; OS Name ; OS Version ; Processor type ;
-+---------------------------+--------------------------+---------+------------+----------------+
-; Analysis & Synthesis      ; ece001.ece.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
-; Fitter                    ; ece001.ece.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
-; Assembler                 ; ece001.ece.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
-; TimeQuest Timing Analyzer ; ece001.ece.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
-; EDA Netlist Writer        ; ece001.ece.local.cmu.edu ; Red Hat ; Red Hat    ; x86_64         ;
-+---------------------------+--------------------------+---------+------------+----------------+
++--------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                            ;
++---------------------------+------------------+---------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++---------------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-PS0HPQ0  ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-PS0HPQ0  ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-PS0HPQ0  ; Windows Vista ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-PS0HPQ0  ; Windows Vista ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-PS0HPQ0  ; Windows Vista ; 6.2        ; x86_64         ;
++---------------------------+------------------+---------------+------------+----------------+
 
 
 ------------
