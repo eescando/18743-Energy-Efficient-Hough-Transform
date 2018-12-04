@@ -154,3 +154,63 @@ module input_col(
   end
 endmodule : input_col
 
+module blur_pipe(
+  input logic clock,
+  input logic init, 
+  input logic data_req_in,
+  input logic data_rdy_in,
+  input logic last_col_in,
+  input logic [255:0][7:0] data_in,
+  output logic data_rdy_out,
+  output logic [255:0][7:0] data_out,
+  output logic data_req_out,
+  output logic last_col_out);
+  
+  logic [255:0][7:0] blur_out;
+  logic [255:0][2:0][23:0] reg_in;
+ 
+  logic [7:0] cycle_c; 
+   
+  assign data_rdy_out = (cycle_c == p);
+  assign data_req_out = data_rdy_out && (~last_col_out) && data_req_in;
+  
+  genvar i;
+  generate
+    for(i = 0; i< 256; i++) begin : alu
+        assign blur_out = (reg_in[i]>>4) + 
+        grey conv (.rgb_in(reg_in[i]), .grey_out(grey_out[i]));
+      end
+    end
+  endgenerate
+
+
+  always_ff @(posedge clock) begin
+    if(init) begin
+      cycle_c <= p;
+      last_col_out <= 1'b0;
+    end else if(data_req_out & data_rdy_in) begin
+		last_col_out <= last_col_in;
+      cycle_c <= 8'b0;
+    end else if (~data_rdy_out) begin
+      cycle_c <= cycle_c + 1'b1;
+    end
+  end
+
+  generate
+    for(i = 0; i<256; i++) begin : shifts
+	   always_ff @(posedge clock) begin
+        if(data_req_out & data_rdy_in) begin
+		    reg_in[i] <= data_in[i];
+		  end else if(~data_rdy_out) begin
+		    if((i%p) != 0) begin
+            reg_in[i-1] <= reg_in[i];
+            data_out[i+1] <= data_out[i];
+          end else begin
+            data_out[i] <= grey_out[i];
+          end
+        end
+		end
+    end
+  endgenerate
+endmodule : grey_pipe
+
