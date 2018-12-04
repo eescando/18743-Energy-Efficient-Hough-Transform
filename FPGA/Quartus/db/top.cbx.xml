@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="top">
-		<CBX_INST_ENTRY INSTANCE_NAME="|top|input_col:ii|inputRAM:ram[0].block|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_h9s1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|top|input_col:ii|inputRAM:ram[1].block|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_i9s1.tdf"/>
-	</PROJECT>
-</LOG_ROOT>
