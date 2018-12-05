@@ -18,7 +18,7 @@ with open(image_path_y) as fy:
   for i in range (0, 256):
     ss = "00000" + str(i)
     o = open(output_path + "/r" +  ss[-3:] + ".mif", "w");
-    o.write("DEPTH = 256;\nWIDTH=8;\nADDRESS_RADIX = HEX;\nDATA_RADIX = DEC;\nCONTENT\nBEGIN\n00:");
+    o.write("DEPTH = 256;\nWIDTH=18;\nADDRESS_RADIX = HEX;\nDATA_RADIX = DEC;\nCONTENT\nBEGIN\n00:");
     for j in range (0,256):
       y = int(0.5*float(fy.readline()));
       y_val = (abs(y) & 0xFF) | ((y < 0) << 8);
