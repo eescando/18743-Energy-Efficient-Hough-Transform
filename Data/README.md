@@ -1,3 +1,4 @@
 #Raw Image and Video Data
-Each subfolder contains a text file representing bytes of pixels
+Chicago contains raw data for drone footage clip
 
+split directories contain .mif files for each step of the hough pipeline
