@@ -1,4 +1,5 @@
-`define PAR 256
+//increase size of a column of data for ease of compilation checking
+`define COL 256
 
 module top(
   input logic CLOCK_50,
@@ -8,7 +9,7 @@ module top(
   output logic [8:0] LEDG
   );
   
-  parameter W = 8;
+  parameter W = 1;
   logic clock;
   logic [(W-1):0] no_out;
   assign no_out = 100'd0;
@@ -32,16 +33,19 @@ module top(
   assign final_rdy = s_data_rdy[1];
   assign final_last = s_last_col[1];
   logic [15:0] mult_res;
-  /*assign LEDG = mult_res[15:8];
-  mult m1 (.dataa(SW[15:8]),.result(mult_res));*/
+ 
   logic [10:0] s_data_req, s_data_rdy, s_last_col;
   logic [255:0][23:0] rgb_data;
   logic [255:0][7:0] grey_data;
   logic [255:0][7:0] blur_data;
   logic [255:0][17:0] grad_data;
-  input_col #(18, 18) ii (.clock, .init, .data_req_in(s_data_req[1]), .data_req_out(s_data_req[0]),
+  logic [255:0][9:0]  mag_data;
+  logic [255:0][7:0]  nms_data;
+  
+  //first parameter is data size, second is word size for blocks that do not match exactly
+  input_col #(8, 8) ii (.clock, .init, .data_req_in(s_data_req[1]), .data_req_out(s_data_req[0]),
                                     .data_rdy_in(1'b1), .data_rdy_out(s_data_rdy[0]), .last_col_out(s_last_col[0]),
-												.last_col_in(1'b0), .data_out(grad_data));
+												.last_col_in(1'b0), .data_out(mag_data));
   /*assign s_data_req[2] = 1'b1; 
   grey_pipe #(1) gyp (.clock, .init, .data_req_in(s_data_req[2]), .data_req_out(s_data_req[1]),
                                     .data_rdy_in(s_data_rdy[0]), .data_rdy_out(s_data_rdy[1]), .last_col_out(s_last_col[1]),
@@ -73,14 +77,32 @@ module top(
   mag_pipe #(1)     mp (.clock, .init, .data_req_in(s_data_req[5]), .data_req_out(s_data_req[4]),
                                     .data_rdy_in(s_data_rdy[3]), .data_rdy_out(s_data_rdy[4]), .last_col_out(s_last_col[4]),
    											.last_col_in(s_last_col[3]), .data_out(out_data), .data_in(grad_data));*/
-  
+  /*
   assign s_data_req[6] = 1'b1;
   assign s_data_req[1] = s_data_req[5];
   assign s_data_rdy[4] = s_data_rdy[0];
   assign s_last_col[4] = s_last_col[0];
   atan_pipe #(2)     atp (.clock, .init, .data_req_in(s_data_req[6]), .data_req_out(s_data_req[5]),
                                     .data_rdy_in(s_data_rdy[4]), .data_rdy_out(s_data_rdy[5]), .last_col_out(s_last_col[5]),
-   											.last_col_in(s_last_col[4]), .data_out(out_data), .data_in(grad_data));
+   											.last_col_in(s_last_col[4]), .data_out(out_data), .data_in(grad_data));*/
+  /*											
+  assign s_data_req[7] = 1'b1;
+  assign s_data_req[1] = s_data_req[6];
+  assign s_data_rdy[5] = s_data_rdy[0];
+  assign s_last_col[5] = s_last_col[0];
+  nms_pipe           nmsp (.clock, .init, .data_req_in(s_data_req[7]), .data_req_out(s_data_req[6]),
+                                    .data_rdy_in(s_data_rdy[5]), .data_rdy_out(s_data_rdy[6]), .last_col_out(s_last_col[6]),
+   											.last_col_in(s_last_col[5]), .data_out(out_data), .data_in(grad_data));*/
+																							
+  assign s_data_req[8] = 1'b1;
+  assign s_data_req[1] = s_data_req[7];
+  assign s_data_rdy[6] = s_data_rdy[0];
+  assign s_last_col[6] = s_last_col[0];
+  thresh_pipe           thp (.clock, .init, .data_req_in(s_data_req[8]), .data_req_out(s_data_req[7]),
+                                    .data_rdy_in(s_data_rdy[6]), .data_rdy_out(s_data_rdy[7]), .last_col_out(s_last_col[7]),
+   											.last_col_in(s_last_col[6]), .data_out(out_data), .data_in(nms_data));									
+												
+												
 												
   logic [255:0][(W-1):0] out_data;
 endmodule : top
@@ -104,8 +126,9 @@ module input_col(
 
   genvar i, s;
   generate
-    for(i = 0; i < `PAR; i++) begin : ram
-      gradRAM #("000"+((i/100)<<16) + (((i%100)/10)<<8) + (i%10)) block (.clock, .q({data_out_n[i],junk[i]}),
+    for(i = 0; i < `COL; i++) begin : ram
+	   //change ram type based on which is being tested
+      grayRAM #("000"+((i/100)<<16) + (((i%100)/10)<<8) + (i%10)) block (.clock, .q({data_out_n[i],junk[i]}),
                                                       .rdaddress(addr));
     end : ram
   endgenerate
@@ -274,7 +297,7 @@ module blur_pipe(
    
   genvar i;
   generate
-    for(i = 0; i< `PAR; i++) begin : alu
+    for(i = 0; i< `COL; i++) begin : alu
 	     if(i!=0) begin 
 			blur bu (.clock, .en(en_blur), .reset(reset_blur), .done(done_blur[i]), .out(data_out[i]),
 						.in({reg_in[0][i], reg_in[1][i], reg_in[2][i],reg_in[0][i+1], reg_in[1][i+1],
@@ -417,7 +440,7 @@ module grad_pipe(
   
   genvar i;
   generate
-    for(i = 0; i< `PAR; i++) begin : alu
+    for(i = 0; i< `COL; i++) begin : alu
         grad bu (.clock, .en(en_grad), .reset(reset_grad), .done(done_grad[i]), .out_x(data_out[i][8:0]),
 		           .out_y(data_out[i][17:9]),
                  .in({reg_in[0][i], reg_in[1][i], reg_in[2][i],reg_in[0][i+1], reg_in[1][i+1],
@@ -497,7 +520,7 @@ module mag_pipe(
   
   genvar i;
   generate
-    for(i = 0; i< `PAR; i++) begin : alu
+    for(i = 0; i< `COL; i++) begin : alu
       if((i % p) == 0) begin
         mag conv (.x_in(reg_in[i][16:9]), .y_in(reg_in[i][7:0]), .mag_out(top_out[i]));
       end
@@ -523,7 +546,7 @@ module mag_pipe(
   end
   
   generate
-    for(i = 0; i<`PAR; i++) begin : shifts
+    for(i = 0; i<`COL; i++) begin : shifts
 	   if((i%p) == 0) begin
 		  assign data_out_n[i] = data_rdy_out ? data_out[i] : top_out[i];
 		  assign reg_in_n[i] = data_req_out ? data_in[i] : reg_in[i+1];
@@ -561,7 +584,7 @@ module atan_pipe(
   
   genvar i;
   generate
-    for(i = 0; i< `PAR; i++) begin : alu
+    for(i = 0; i< `COL; i++) begin : alu
       if((i % p) == 0) begin
         atan conv (.x(reg_in[i][16:9]), .y(reg_in[i][7:0]), .dir(top_out[i]));
       end
@@ -587,7 +610,7 @@ module atan_pipe(
   end
   
   generate
-    for(i = 0; i<`PAR; i++) begin : shifts
+    for(i = 0; i<`COL; i++) begin : shifts
 	   if((i%p) == 0) begin
 		  assign data_out_n[i] = data_rdy_out ? data_out[i] : top_out[i];
 		  assign reg_in_n[i] = data_req_out ? data_in[i] : reg_in[i+1];
@@ -601,3 +624,173 @@ module atan_pipe(
     end
   endgenerate
 endmodule : atan_pipe
+
+module nms(
+  input logic clock,
+  input logic en,
+  input logic reset,
+  output logic done,
+  output logic [7:0] out,
+  input logic [8:0][9:0] in);
+  assign angle = in[4][9:7];
+  logic [3:0] cycle_c;
+  logic [7:0] n_sum;
+  
+  always_comb begin
+    n_sum = 8'd0;
+    case (angle)
+	   2'd0: n_sum = (in[4][7:0] > in[3][7:0] && in[4][7:0] > in[5][7:0]) ? in[4][7:0] : 8'd0;
+		2'd1: n_sum = (in[4][7:0] > in[6][7:0] && in[4][7:0] > in[2][7:0]) ? in[4][7:0] : 8'd0;
+		2'd2: n_sum = (in[4][7:0] > in[7][7:0] && in[4][7:0] > in[8][7:0]) ? in[4][7:0] : 8'd0;
+		2'd3: n_sum = (in[4][7:0] > in[0][7:0] && in[4][7:0] > in[8][7:0]) ? in[4][7:0] : 8'd0;
+    endcase
+  end
+  
+  always_ff @(posedge clock) begin
+    if(reset) begin
+	   out <= 8'd0;
+		cycle_c <= 4'd0;
+		done <= 1'd0;
+	 end else if(~done && en) begin
+	   cycle_c <= cycle_c + 4'b1;
+      out <= n_sum;
+		done <= (cycle_c == 4'd0);
+    end else if(en) begin
+	   done <= 1'b1;
+	 end
+  end
+endmodule : nms
+
+module nms_pipe(
+  input logic clock,
+  input logic init, 
+  input logic data_req_in,
+  input logic data_rdy_in,
+  input logic last_col_in,
+  input logic [255:0][9:0] data_in,
+  output logic data_rdy_out,
+  output logic [255:0][7:0] data_out,
+  output logic data_req_out,
+  output logic last_col_out);
+  logic second_col;
+  logic first_col;
+  logic reset_grad;
+  logic [255:0] done_grad;
+  logic en_grad;
+  logic [2:0][257:0][9:0] reg_in; 
+  assign reg_in[0][0] = 8'b0;
+  assign reg_in[0][257] = 8'b0;
+  assign reg_in[1][0] = 8'b0;
+  assign reg_in[1][257] = 8'b0;
+  assign reg_in[2][0] = 8'b0;
+  assign reg_in[2][257] = 8'b0;
+  assign data_rdy_out = done_grad[0];
+  assign reset_grad = (data_rdy_out && data_req_in) || init; 
+  assign data_req_out = ((data_rdy_out) && (~last_col_out) && (data_req_in)) || (first_col || second_col);
+  
+  genvar i;
+  generate
+    for(i = 0; i< `COL; i++) begin : alu
+        nms bu (.clock, .en(en_grad), .reset(reset_grad), .done(done_grad[i]), .out(data_out[i]),
+                 .in({reg_in[0][i], reg_in[1][i], reg_in[2][i],reg_in[0][i+1], reg_in[1][i+1],
+				     reg_in[2][i+1], reg_in[0][i+2], reg_in[1][i+2], reg_in[2][i+2]}));
+	 end
+  endgenerate
+  
+  always_ff @(posedge clock) begin
+    if(init) begin
+		reg_in[2][256:1] <= reg_in[1][256:1]; 
+		reg_in[1][256:1] <= reg_in[0][256:1];
+		reg_in[0][256:1] <= 2048'b0;
+		last_col_out <= 1'b0;
+		first_col <= 1'b1;
+		en_grad <= 1'd0;
+    end else if(data_req_out && (data_rdy_in || last_col_in)) begin
+	   if(first_col) begin
+		  reg_in[2][256:1] <= reg_in[1][256:1]; 
+		  reg_in[1][256:1] <= reg_in[0][256:1];
+		  reg_in[0][256:1] <= data_in;
+		  first_col <= 1'b0;
+		  second_col <= 1'b1;
+		  last_col_out <= 1'b0;
+		  en_grad <= 1'd0;
+		end else if (~data_rdy_in && last_col_in) begin
+		  reg_in[2][256:1] <= reg_in[1][256:1];
+		  reg_in[1][256:1] <= reg_in[0][256:1];
+		  reg_in[0][256:1] <= 2048'b0;
+		  last_col_out <= 1'b1;
+		  first_col <= 1'b0;
+		  en_grad <= 1'b1;
+		end else begin
+		  reg_in[2][256:1] <= reg_in[1][256:1];
+		  reg_in[1][256:1] <= reg_in[0][256:1];
+		  reg_in[0][256:1] <= data_in;
+	     last_col_out <= 1'b0;
+		  en_grad <= 1'b1;
+		  first_col <= 1'b0;
+		  second_col <= 1'b0;
+      end
+    end
+  end
+endmodule : nms_pipe
+
+module thresh_pipe(
+  input logic clock,
+  input logic init, 
+  input logic data_req_in,
+  input logic data_rdy_in,
+  input logic last_col_in,
+  input logic [255:0][7:0] data_in,
+  output logic data_rdy_out,
+  output logic [255:0] data_out,
+  output logic data_req_out,
+  output logic last_col_out);
+  parameter p = 1;
+  logic [255:0] data_out_n;
+  logic [255:0][7:0] reg_in, reg_in_n;
+  logic [255:0] op_out;
+  logic [7:0] cycle_c; 
+   
+  assign data_rdy_out = (cycle_c == p);
+  assign data_req_out = data_rdy_out && (~last_col_out) && data_req_in;
+  
+  genvar i;
+  generate
+    for(i = 0; i< `COL; i++) begin : alu
+      assign top_out[i] = reg_in[i] > 8'd0 ? 1'b1 : 1'b0; 
+    end
+  endgenerate
+
+
+  always_ff @(posedge clock) begin
+    if(init) begin
+      cycle_c <= p;
+      last_col_out <= 1'b0;
+    end else if(data_req_out & data_rdy_in) begin
+		last_col_out <= last_col_in;
+      cycle_c <= 8'b0;
+    end else if (~data_rdy_out) begin
+      cycle_c <= cycle_c + 1'b1;
+    end
+  end
+  
+  always_ff @(posedge clock) begin
+    reg_in <= reg_in_n;
+	 data_out <= data_out_n;
+  end
+  
+  generate
+    for(i = 0; i<`COL; i++) begin : shifts
+	   if((i%p) == 0) begin
+		  assign data_out_n[i] = data_rdy_out ? data_out[i] : top_out[i];
+		  assign reg_in_n[i] = data_req_out ? data_in[i] : reg_in[i+1];
+		end else if ((i%p) == (p-1)) begin
+		  assign data_out_n[i] = data_rdy_out ? data_out[i] : data_out[i-1];
+		  assign reg_in_n[i] = data_in[i]; 
+	   end else begin
+		  assign data_out_n[i] = data_rdy_out ? data_out[i] : data_out[i-1];
+		  assign reg_in_n[i] = data_req_out ? data_in[i] : reg_in[i+1];   
+		end
+    end
+  endgenerate
+endmodule : thresh_pipe
