@@ -3,6 +3,7 @@ module atan(input logic [8:0] y, x,
   logic s;
   assign s = y[8] ^ x[8];
   always_comb begin
+    dir = 2'd0;
     case(x)
     8'd0 : begin
       if(y > 8'd0) begin
