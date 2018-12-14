@@ -10,7 +10,7 @@ with open(image_path) as f:
   for i in range (0, 256):
     ss = "00000" + str(i)
     o = open(output_path + "/r" +  ss[-3:] + ".mif", "w");
-    o.write("DEPTH = 256;\nWIDTH=8;\nADDRESS_RADIX = HEX;\nDATA_RADIX = DEC;\nCONTENT\nBEGIN\n00:");
+    o.write("DEPTH = 256;\nWIDTH=3;\nADDRESS_RADIX = HEX;\nDATA_RADIX = DEC;\nCONTENT\nBEGIN\n00:");
     for j in range (0,256):
       s = str(int(float(f.readline())/45.0));
       o.write(" " + s);
