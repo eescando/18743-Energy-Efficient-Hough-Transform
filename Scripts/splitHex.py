@@ -1,6 +1,6 @@
 import os
 image_path = "../Data/single_bar_frame.hex"
-output_path = "../Data/split_single_bar_frame"
+output_path = "../Data/split_single_bar_frame_grey"
 
 if not os.path.exists(output_path):
   print ("Make directory first");
